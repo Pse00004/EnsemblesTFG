@@ -4,7 +4,6 @@ import org.apache.spark.rdd.RDD
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.classification.{ SVMModel, SVMWithSGD }
 import org.apache.spark.mllib.evaluation.BinaryClassificationMetrics
-import org.apache.spark.mllib.util.MLUtils
 
 object ModeloSVM {
 

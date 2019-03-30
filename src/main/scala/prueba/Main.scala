@@ -5,7 +5,6 @@ import org.apache.spark.SparkContext
 import org.apache.spark.rdd.RDD
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.regression.LabeledPoint
-import org.apache.spark.mllib.util.MLUtils
 
 object Main {
 
@@ -120,7 +119,7 @@ object Main {
                //val lines = sc.textFile("C:/Users/Pls/Desktop/iris.dat")
 
                val DS = new DataSet()
-               DS.loadDataSet("C:/Users/Pls/Desktop/iris.dat", sc)
+               DS.loadDataSet(ficheroEntrada, sc)
 
                //DS.printAttributes()
                //DS.printInstances()
@@ -179,10 +178,10 @@ object Main {
                val resultados = valoresCombinacionTestDatasets.zip(predicciones)
 
                println("Modelo nivel 1:")
-               val modelo2 = ModeloLR.Modelo(training,modeloLvl1.apply(1).toInt)
                ModeloLR.precisionModelo(modeloLR, test)
-               println("Modelo nivel 1 sin stacking:")
-               ModeloLR.precisionModelo(modelo2, test)
+               //val modelo2 = ModeloLR.Modelo(training,modeloLvl1.apply(1).toInt)
+               //println("Modelo nivel 1 sin stacking:")
+               //ModeloLR.precisionModelo(modelo2, test)
 
                resultados.saveAsTextFile(ficheroSalida)
                println("Ended successfully")
