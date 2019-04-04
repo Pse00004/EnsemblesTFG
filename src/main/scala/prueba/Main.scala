@@ -10,7 +10,9 @@ object Main {
 
     def main(args: Array[String]) {
 
-        val conf = new SparkConf().setAppName("Prueba4").setMaster("local")
+        val t1 = System.nanoTime
+
+        val conf = new SparkConf().setAppName("ProyectoTFG").setMaster("local")
         val sc = new SparkContext(conf)
         sc.setLogLevel("ERROR")
 
@@ -48,7 +50,8 @@ object Main {
 
             println(usage)
 
-        } else {
+        }
+        else {
 
             ficheroEntrada = args.apply(0)
             ficheroSalida = args.apply(1)
@@ -130,61 +133,106 @@ object Main {
 
             RDDdeLabeledPoint.collect().foreach(println)
 
+            var valoresCrossValidation = Array[Double]()
+
             // Dividir dataset en training y test
-            val splits = RDDdeLabeledPoint.randomSplit(Array(0.6, 0.4), seed = 11L)
-            val training = splits(0).cache()
-            val test = splits(1)
+            //val splits = RDDdeLabeledPoint.randomSplit(Array(0.6, 0.4))
+            val splits = RDDdeLabeledPoint.randomSplit(Array(0.2, 0.2, 0.2, 0.2, 0.2))
+            //val training = splits(0).cache()
+            //val test = splits(1)
+            var training: RDD[LabeledPoint] = null
+            var test: RDD[LabeledPoint] = null
             val numParticiones = 10
 
-            //Paso 1
-            //Dividir el dataset en particiones
-            println("Realizando Paso 1")
-            val pesoParticiones = Array.fill(numParticiones)(1.0)
-            val arrayParticiones = training.randomSplit(pesoParticiones, seed = 11L)
-
-            //Paso 5
-            //Repetir los pasos 2 a 4 mediante la función Stacking con varios modelos
-            var arrayResultadosNivel0 = Array[Array[RDD[LabeledPoint]]]()
-            for (i <- 0 to modelosLvl0.length - 1) {
-                arrayResultadosNivel0 :+= StackingModelos.Stacking(arrayParticiones, test, numParticiones, modelosLvl0.apply(i))
+            println(instancias.count())
+            println(RDDdeLabeledPoint.count())
+            println("Tamaño splits")
+            for(i <- splits){
+                println(i.count())
             }
 
-            //Paso 6
-            //Realizar un nuevo modelo con los resultados del training dataset en el paso anterior
-            println("Realizando Paso 6")
-            var combinacionTrainDatasets = arrayResultadosNivel0.apply(0).apply(0)
-            for (i <- 1 to modelosLvl0.length - 1) {
-                combinacionTrainDatasets = combinacionTrainDatasets.union(arrayResultadosNivel0.apply(i).apply(0))
+            for (indiceCV <- 0 to 4) {
+
+                var trainingInstanciado = false
+
+                for (j <- 0 to 4) {
+
+                    if (indiceCV == j) {
+                        test = splits(j)
+                        println("Test: " + test.count())
+                    }
+                    else if (trainingInstanciado == false) {
+                        training = splits(j)
+                        trainingInstanciado = true
+                    }
+                    else {
+                        training = training.union(splits(j))
+                        println("Training: " + training.count())
+                    }
+                    println("CV: " + j)
+                }
+
+                training.cache()
+
+                //Paso 1
+                //Dividir el dataset en particiones
+                println("Realizando Paso 1")
+                val pesoParticiones = Array.fill(numParticiones)(1.0)
+                val arrayParticiones = training.randomSplit(pesoParticiones)
+
+                //Paso 5
+                //Repetir los pasos 2 a 4 mediante la función Stacking con varios modelos
+                var arrayResultadosNivel0 = Array[Array[RDD[LabeledPoint]]]()
+                for (i <- 0 to modelosLvl0.length - 1) {
+                    arrayResultadosNivel0 :+= StackingModelos.Stacking(arrayParticiones, test, numParticiones, modelosLvl0.apply(i))
+                }
+
+                //Paso 6
+                //Realizar un nuevo modelo con los resultados del training dataset en el paso anterior
+                println("Realizando Paso 6")
+                var combinacionTrainDatasets = arrayResultadosNivel0.apply(0).apply(0)
+                for (i <- 1 to modelosLvl0.length - 1) {
+                    combinacionTrainDatasets = combinacionTrainDatasets.union(arrayResultadosNivel0.apply(i).apply(0))
+                }
+
+                var combinacionTestDatasets = arrayResultadosNivel0.apply(0).apply(1)
+                for (i <- 1 to modelosLvl0.length - 1) {
+                    combinacionTestDatasets = combinacionTestDatasets.union(arrayResultadosNivel0.apply(i).apply(1))
+                }
+
+                //Paso 7
+                //Realizar predicciones con los resultados del test dataset en el paso 5
+                println("Realizando Paso 7")
+                val modeloLR = modeloLvl1.apply(0) match {
+                    //case "NB" => ModeloNaiveBayes.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toFloat)
+                    //case "SVM" => ModeloSVM.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt)
+                    case "LR" => ModeloLR.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt)
+                    //case "DT"  => ModeloDT.Modelo(RDDprediccionesTraining)
+                }
+
+                val valoresCombinacionTestDatasets = combinacionTestDatasets.map({ case LabeledPoint(v1, v2) => v2 })
+                val predicciones = modeloLR.predict(valoresCombinacionTestDatasets)
+                //val prediccionesTexto = predicciones.map(f => numeroAClase(f))
+                val resultados = valoresCombinacionTestDatasets.zip(predicciones)
+
+                println("Modelo nivel 1:")
+                valoresCrossValidation :+= ModeloLR.precisionModelo(modeloLR, test)
+
+                val duration = (System.nanoTime - t1) / 1e9d
+                println("Tiempo desde el comienzo de ejecución: "+ duration)
             }
+            //resultados.saveAsTextFile(ficheroSalida)
+            println("Resultados CrossValidation: ")
 
-            var combinacionTestDatasets = arrayResultadosNivel0.apply(0).apply(1)
-            for (i <- 1 to modelosLvl0.length - 1) {
-                combinacionTestDatasets = combinacionTestDatasets.union(arrayResultadosNivel0.apply(i).apply(1))
+            var sumaCV = 0d
+            for (i <- 0 to 4) {
+                println("CV " + i + ": " + valoresCrossValidation(i))
+                sumaCV = sumaCV + valoresCrossValidation(i)
             }
+            val mediaCV = sumaCV / 5
+            println("Media CrossValidation: " + mediaCV)
 
-            //Paso 7
-            //Realizar predicciones con los resultados del test dataset en el paso 5
-            println("Realizando Paso 7")
-            val modeloLR = modeloLvl1.apply(0) match {
-                //case "NB" => ModeloNaiveBayes.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toFloat)
-                //case "SVM" => ModeloSVM.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt)
-                case "LR" => ModeloLR.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt)
-                //case "DT"  => ModeloDT.Modelo(RDDprediccionesTraining)
-            }
-
-            val valoresCombinacionTestDatasets = combinacionTestDatasets.map({ case LabeledPoint(v1, v2) => v2 })
-            val predicciones = modeloLR.predict(valoresCombinacionTestDatasets)
-            //val prediccionesTexto = predicciones.map(f => numeroAClase(f))
-            val resultados = valoresCombinacionTestDatasets.zip(predicciones)
-
-            println("Modelo nivel 1:")
-            ModeloLR.precisionModelo(modeloLR, test)
-            //val modelo2 = ModeloLR.Modelo(training,modeloLvl1.apply(1).toInt)
-            //println("Modelo nivel 1 sin stacking:")
-            //ModeloLR.precisionModelo(modelo2, test)
-
-            resultados.saveAsTextFile(ficheroSalida)
-            println("Ended successfully")
+            println("Finalizado correctamnte")
 
         }
     }

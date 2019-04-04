@@ -15,7 +15,7 @@ object ModeloLR {
           return model
      }
 
-     def precisionModelo(model: LogisticRegressionModel, test: RDD[LabeledPoint]) {
+     def precisionModelo(model: LogisticRegressionModel, test: RDD[LabeledPoint]): Double = {
 
           // Compute raw scores on the test set.
           val predictionAndLabels = test.map {
@@ -27,6 +27,7 @@ object ModeloLR {
           // Get evaluation metrics.
           val metrics = new MulticlassMetrics(predictionAndLabels)
           val accuracy = metrics.accuracy
-          println("Precisión del modelo LR: " + accuracy)
+          //println("Precisión del modelo LR: " + accuracy)
+          return accuracy
      }
 }
