@@ -6,7 +6,7 @@ import org.apache.spark.rdd.RDD
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.regression.LabeledPoint
 
-object Main {
+object MainStacking {
 
     def main(args: Array[String]) {
 
@@ -136,7 +136,6 @@ object Main {
             var valoresCrossValidation = Array[Double]()
 
             // Dividir dataset en training y test
-            //val splits = RDDdeLabeledPoint.randomSplit(Array(0.6, 0.4))
             val splits = RDDdeLabeledPoint.randomSplit(Array(0.2, 0.2, 0.2, 0.2, 0.2))
             //val training = splits(0).cache()
             //val test = splits(1)
@@ -146,10 +145,10 @@ object Main {
 
             println(instancias.count())
             println(RDDdeLabeledPoint.count())
-            println("Tamaño splits")
-            for(i <- splits){
-                println(i.count())
-            }
+            //println("Tamaño splits")
+            //for(i <- splits){
+            //    println(i.count())
+            //}
 
             for (indiceCV <- 0 to 4) {
 
@@ -236,10 +235,4 @@ object Main {
 
         }
     }
-
-    def printInstances(instances: RDD[String]) = {
-        println("Numero instancias: " + instances.count())
-        instances.collect().foreach(println)
-    }
-
 }
