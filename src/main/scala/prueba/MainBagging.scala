@@ -179,6 +179,8 @@ object MainBagging {
                 var arrayAtributos = Array[Double]()
                 var arrayVeces = Array[Int]()
 
+                var arrayPrediccionesFinal = Array[Double]()
+
                 for (i <- 0 to numAtributos - 1) {
                     arrayAtributos :+= i.toDouble
                     arrayVeces :+= 0
@@ -195,15 +197,37 @@ object MainBagging {
                         }
                     }
 
-                    println("Instancia: " + instancia)
-                    arrayVeces.foreach((e: Int) => print(e + " "))
-                    println()
+                    var claseMasComun = 0d
+                    var vecesMasComun = 0
 
                     for (i <- 0 to numAtributos - 1) {
+
+                        if (arrayVeces(i) > vecesMasComun) {
+                            claseMasComun = arrayAtributos(i)
+                            vecesMasComun = arrayVeces(i)
+                        }
                         arrayVeces(i) = 0
                     }
 
+                    arrayPrediccionesFinal :+= claseMasComun
+                    //println("Instancia: " + instancia)
+                    //arrayVeces.foreach((e: Int) => print(e + " "))
+                    //print(" -> " + claseMasComun)
+                    //println()
                 }
+
+                val clasesTest = test.map({ case LabeledPoint(v1, v2) => v1 }).take(test.count().toInt)
+                var prediccionesCorrectas = 0
+
+                for (i <- 0 to test.count().toInt - 1) {
+                    println("Prediccion " + i + ": " + arrayPrediccionesFinal(i))
+                    if (arrayPrediccionesFinal(i) == clasesTest(i)) {
+                        prediccionesCorrectas = prediccionesCorrectas + 1
+                    }
+                }
+
+                println("Predicciones correctas: " + prediccionesCorrectas)
+                println("Precisión: " + prediccionesCorrectas.toDouble / test.count())
 
 
                 val duration = (System.nanoTime - t1) / 1e9d
