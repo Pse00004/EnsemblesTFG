@@ -117,7 +117,7 @@ object MainBagging {
             println(instancias.count())
             println(RDDdeLabeledPoint.count())
 
-            for (indiceCV <- 0 to 4) {
+            for (indiceCV <- 0 to 0) {
 
                 var trainingInstanciado = false
 
@@ -142,7 +142,7 @@ object MainBagging {
                 training.cache()
 
                 val valoresTest = test.map({ case LabeledPoint(v1, v2) => v2 })
-                var arrayCombinacionPredicciones = Array[RDD[Double]]()
+                var arrayCombinacionPredicciones = Array[Array[Double]]()
 
                 for (k <- 0 to 4) {
 
@@ -164,15 +164,47 @@ object MainBagging {
                             predicciones = modelo.predict(valoresTest)
                         }
                     }
-                    arrayCombinacionPredicciones :+= predicciones
+                    arrayCombinacionPredicciones :+= predicciones.take(test.count().toInt)
                 }
 
                 println("Numero instancias test: " + test.count())
 
                 for (l <- 0 to 4) {
-                    arrayCombinacionPredicciones.apply(l).collect().foreach((e: Double) => print(e + " "))
+                    arrayCombinacionPredicciones.apply(l).foreach((e: Double) => print(e + " "))
                     println()
                 }
+
+                val numAtributos = DS.getnOutput
+
+                var arrayAtributos = Array[Double]()
+                var arrayVeces = Array[Int]()
+
+                for (i <- 0 to numAtributos - 1) {
+                    arrayAtributos :+= i.toDouble
+                    arrayVeces :+= 0
+                }
+
+                for (instancia <- 0 to test.count().toInt - 1) {
+
+                    for (indiceBootstrap <- 0 to 4) {
+
+                        for (indiceAtributo <- 0 to numAtributos - 1) {
+                            if (arrayCombinacionPredicciones.apply(indiceBootstrap).apply(instancia) == arrayAtributos.apply(indiceAtributo)) {
+                                arrayVeces(indiceAtributo) = arrayVeces(indiceAtributo) + 1
+                            }
+                        }
+                    }
+
+                    println("Instancia: " + instancia)
+                    arrayVeces.foreach((e: Int) => print(e + " "))
+                    println()
+
+                    for (i <- 0 to numAtributos - 1) {
+                        arrayVeces(i) = 0
+                    }
+
+                }
+
 
                 val duration = (System.nanoTime - t1) / 1e9d
                 println("Tiempo desde el comienzo de ejecución: " + duration)
