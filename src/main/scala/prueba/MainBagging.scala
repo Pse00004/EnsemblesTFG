@@ -117,7 +117,9 @@ object MainBagging {
             println(instancias.count())
             println(RDDdeLabeledPoint.count())
 
-            for (indiceCV <- 0 to 0) {
+            var arrayPrecisionesCV = Array[Double]()
+
+            for (indiceCV <- 0 to 4) {
 
                 var trainingInstanciado = false
 
@@ -227,12 +229,20 @@ object MainBagging {
                 }
 
                 println("Predicciones correctas: " + prediccionesCorrectas)
-                println("Precisión: " + prediccionesCorrectas.toDouble / test.count())
 
+                val precision = prediccionesCorrectas.toDouble / test.count()
+                arrayPrecisionesCV :+= precision
+                println("Precisión: " + precision)
 
                 val duration = (System.nanoTime - t1) / 1e9d
                 println("Tiempo desde el comienzo de ejecución: " + duration)
             }
+
+            println("Precisiones CrossValidation: ")
+            for (i <- 0 to arrayPrecisionesCV.length - 1) {
+                println("Ejecución " + i + ": " + arrayPrecisionesCV(i))
+            }
+
             //resultados.saveAsTextFile(ficheroSalida)
             println("Finalizado correctamente")
         }
