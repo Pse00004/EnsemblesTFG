@@ -37,8 +37,8 @@ object MainStacking {
           numClasses
      NB: naive bayes
           lambda
-     SVM: linear support vector machines
-          numIterations
+     DT: decision tree
+          numClasses, maxDepth, maxBins
                                
 -------------------------------------------------------------------------------------------
                         
@@ -46,7 +46,7 @@ object MainStacking {
      Los modelos se deben introducir mediante sus iniciales
      
      Ejemplo de uso:
-          C:/iris.csv C:/resultados -l0 NB 1.0 -l0 SVM 100 -l1 LR 100 0.00000001"""
+          C:/iris.csv C:/resultados -l0 NB 1.0 -l0 DT 3 5 32 -l1 LR 100"""
 
             println(usage)
 
@@ -206,7 +206,7 @@ object MainStacking {
                     //case "NB" => ModeloNaiveBayes.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toFloat)
                     //case "SVM" => ModeloSVM.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt)
                     case "LR" => ModeloLR.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt)
-                    //case "DT"  => ModeloDT.Modelo(RDDprediccionesTraining)
+                    //case "DT"  => ModeloDT.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt, modeloLvl1.apply(2).toInt, modeloLvl1.apply(3).toInt)
                 }
 
                 val valoresCombinacionTestDatasets = combinacionTestDatasets.map({ case LabeledPoint(v1, v2) => v2 })
@@ -218,7 +218,7 @@ object MainStacking {
                 valoresCrossValidation :+= ModeloLR.precisionModelo(modeloLR, test)
 
                 val duration = (System.nanoTime - t1) / 1e9d
-                println("Tiempo desde el comienzo de ejecución: "+ duration)
+                println("Tiempo desde el comienzo de ejecución: " + duration)
             }
             //resultados.saveAsTextFile(ficheroSalida)
             println("Resultados CrossValidation: ")

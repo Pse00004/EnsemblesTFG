@@ -1,7 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84548af3-0cc9-4aeb-b031-c56c7ed1dc7b" name="Default Changelist" comment="" />
+    <list default="true" id="84548af3-0cc9-4aeb-b031-c56c7ed1dc7b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/project/target/config-classes/$2e4c170e90da8ae677a0.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/target/config-classes/$63c4daace4aba206cc6a.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/target/config-classes/$7856948ab968dbf38690.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/target/config-classes/$af1f1228565ecc5bd3a4$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/target/config-classes/$af1f1228565ecc5bd3a4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/target/config-classes/$eb3d7f41f3be2cd0eb48.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$007da1b945be967426ec$.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$2e4c170e90da8ae677a0$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$007da1b945be967426ec.cache" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$2e4c170e90da8ae677a0.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$007da1b945be967426ec.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$375536e9d1030103c732$.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$63c4daace4aba206cc6a$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$375536e9d1030103c732.cache" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$63c4daace4aba206cc6a.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$375536e9d1030103c732.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$56e42a0fd7e7d41434bf$.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$eb3d7f41f3be2cd0eb48$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$56e42a0fd7e7d41434bf.cache" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$7856948ab968dbf38690.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$56e42a0fd7e7d41434bf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$6073abeb565d90ad33e0$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$6073abeb565d90ad33e0.cache" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$af1f1228565ecc5bd3a4.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$6073abeb565d90ad33e0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$dace33acd5dbf502be64$.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$7856948ab968dbf38690$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$dace33acd5dbf502be64.cache" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$eb3d7f41f3be2cd0eb48.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$dace33acd5dbf502be64.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/proyecto-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/proyecto-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/proyecto-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/proyecto-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-compile-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-compile-internal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-compile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-compile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-optional.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-optional.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-provided.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-provided.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-runtime-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-runtime-internal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-runtime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-runtime.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-scala-tool.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-scala-tool.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-test-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-test-internal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/dependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/dependencyClasspath/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/externalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/externalDependencyClasspath/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/managedClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/managedClasspath/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/dependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/dependencyClasspath/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/externalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/externalDependencyClasspath/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/prueba/ModeloDT.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/prueba/ModeloDT.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/prueba/ModeloLR.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/prueba/ModeloLR.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/prueba/ModeloNaiveBayes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/prueba/ModeloNaiveBayes.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/prueba/ModeloSVM.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/prueba/ModeloSVM.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -49,56 +101,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Main.scala">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="124" column="21" lean-forward="true" selection-start-line="124" selection-start-column="21" selection-end-line="124" selection-end-column="21" />
+            <state relative-caret-position="270">
+              <caret line="45" column="59" lean-forward="true" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
               <folding>
                 <element signature="e#16#49#0" expanded="true" />
-                <element signature="e#663#1691#0" />
-                <element signature="e#1697#4110#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Attribute.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/ModeloLR.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-              <folding>
-                <element signature="e#16#47#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Dataset.scala">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1132">
-              <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="29" column="114" selection-start-line="29" selection-start-column="114" selection-end-line="29" selection-end-column="114" />
+            <state relative-caret-position="599">
+              <caret line="45" column="35" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
               <folding>
-                <element signature="e#16#47#0" expanded="true" />
+                <element signature="e#16#49#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,6 +130,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Package Object" />
       </list>
     </option>
   </component>
@@ -118,6 +139,7 @@
       <find>task</find>
       <find>numer</find>
       <find>printi</find>
+      <find>:+</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -127,15 +149,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloSVM.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloNaiveBayes.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloDT.scala" />
         <option value="$PROJECT_DIR$/build.sbt" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/Attribute.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/Dataset.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloLR.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/Main.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/prueba/Prueba.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloDT.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloLR.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloNaiveBayes.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloSVM.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala" />
       </list>
     </option>
   </component>
@@ -222,11 +247,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="prueba.Main" />
+  <component name="RunManager" selected="Application.MainStacking">
+    <configuration name="MainBagging" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="prueba.MainBagging" />
       <module name="ProyectoTFG" />
-      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../iris.dat CarpetaSalida -l0 NB 1.0 -l0 DT -l1 LR 10" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../iris.dat CarpetaSalida -l0 NB 1.0 -l0 NB 1.0 -l0 LR 10 -l0 LR 10 -l0 DT 3 5 32" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="prueba.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainStacking" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="prueba.MainStacking" />
+      <module name="ProyectoTFG" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../iris.dat CarpetaSalida -l0 NB 1.0 -l0 DT 3 5 32 -l1 LR 10" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="prueba.*" />
@@ -310,12 +349,14 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MainStacking" />
+      <item itemvalue="Application.MainBagging" />
       <item itemvalue="sbt Task.Ejecutar" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MainStacking" />
+        <item itemvalue="Application.MainBagging" />
       </list>
     </recent_temporary>
   </component>
@@ -346,7 +387,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$/build.sbt" value="99605212" />
+        <entry key="$PROJECT_DIR$" value="3107929204051" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="1332657674" />
         <entry key="$PROJECT_DIR$/project/build.properties" value="2567920773" />
       </map>
     </option>
@@ -380,8 +422,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="952" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987805" visible="true" weight="0.16684435" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987805" visible="true" weight="0.17004265" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -395,7 +438,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3292683" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.3292683" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3292683" />
-      <window_info anchor="bottom" id="Build" order="10" weight="0.3292683" />
+      <window_info anchor="bottom" id="Build" order="10" weight="0.41585365" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3292683" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info active="true" anchor="right" x="22" y="316" width="1876" height="303" id="Run" order="1" sideWeight="0.5012195" visible="true" weight="0.32675907" />
@@ -418,6 +461,9 @@
     <entry file="file://$PROJECT_DIR$/project/build.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/package.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/BaggingObjeto.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Prueba.scala" />
     <entry file="file://$PROJECT_DIR$/build.sbt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -425,40 +471,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/ModeloNaiveBayes.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Dataset.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
-          <folding>
-            <element signature="e#16#47#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="675">
+          <caret line="46" column="37" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/ModeloDT.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Attribute.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#16#47#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="165">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/ModeloSVM.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="105">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
           <folding>
             <element signature="e#16#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/ModeloNaiveBayes.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="29" column="114" selection-start-line="29" selection-start-column="114" selection-end-line="29" selection-end-column="114" />
+        <state relative-caret-position="120">
+          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
           <folding>
             <element signature="e#16#47#0" expanded="true" />
           </folding>
@@ -468,36 +508,50 @@
     <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/ModeloLR.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
           <folding>
             <element signature="e#16#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Attribute.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/ModeloDT.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Main.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="124" column="21" lean-forward="true" selection-start-line="124" selection-start-column="21" selection-end-line="124" selection-end-column="21" />
+        <state relative-caret-position="180">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
           <folding>
-            <element signature="e#16#49#0" expanded="true" />
-            <element signature="e#663#1691#0" />
-            <element signature="e#1697#4110#0" />
+            <element signature="e#16#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Dataset.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1132">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="1237">
+          <caret line="97" column="132" selection-start-line="97" selection-start-column="132" selection-end-line="97" selection-end-column="132" />
+          <folding>
+            <element signature="e#16#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="45" column="59" lean-forward="true" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
+          <folding>
+            <element signature="e#16#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="45" column="35" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+          <folding>
+            <element signature="e#16#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

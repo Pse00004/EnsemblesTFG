@@ -34,14 +34,16 @@ object MainBagging {
         numClasses
     NB: naive bayes
         lambda
+    DT: decision tree
+        numClasses, maxDepth, maxBins
 
 -------------------------------------------------------------------------------------------
 
-    La carpeta de salida debe estar vacía
-    Los modelos se deben introducir mediante sus iniciales
+     La carpeta de salida debe estar vacía
+     Los modelos se deben introducir mediante sus iniciales
 
-    Ejemplo de uso:
-        C:/iris.csv C:/resultados -l0 NB 1.0 -l0 SVM 100"""
+     Ejemplo de uso:
+          C:/iris.csv C:/resultados -l0 NB 1.0 -l0 NB 1.0 -l0 LR 10 -l0 LR 10 -l0 DT 3 5 32"""
 
             println(usage)
 
@@ -162,7 +164,7 @@ object MainBagging {
                             predicciones = modelo.predict(valoresTest)
                         }
                         case "DT" => {
-                            val modelo = ModeloDT.Modelo(subsetTraining)
+                            val modelo = ModeloDT.Modelo(subsetTraining, modelosLvl0.apply(k).apply(1).toInt, modelosLvl0.apply(k).apply(2).toInt, modelosLvl0.apply(k).apply(3).toInt)
                             predicciones = modelo.predict(valoresTest)
                         }
                     }

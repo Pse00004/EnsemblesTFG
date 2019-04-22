@@ -51,7 +51,7 @@ object StackingModelos {
                     RDDcombinado :+= particionDevolver
                 }
                 case "DT" => {
-                    val modeloGrupoParticiones = ModeloDT.Modelo(combinacionGruposParticiones)
+                    val modeloGrupoParticiones = ModeloDT.Modelo(combinacionGruposParticiones, args.apply(1).toInt, args.apply(2).toInt, args.apply(3).toInt)
 
                     val particionTratada = particiones.apply(indiceParticion).map({ case LabeledPoint(v1, v2) => v2 })
                     val prediccionParticion = modeloGrupoParticiones.predict(particionTratada)
@@ -95,7 +95,7 @@ object StackingModelos {
                 return Array(RDDprediccionesTraining, RDDprediccionesTest)
             }
             case "DT" => {
-                val modelo = ModeloDT.Modelo(RDDprediccionesTraining)
+                val modelo = ModeloDT.Modelo(RDDprediccionesTraining, args.apply(1).toInt, args.apply(2).toInt, args.apply(3).toInt)
 
                 println("Realizando Paso 4 para: " + args.apply(0))
                 val testLimpio = test.map({ case LabeledPoint(v1, v2) => v2 })
