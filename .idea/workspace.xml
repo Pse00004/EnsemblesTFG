@@ -1,29 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Proyecto:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="84548af3-0cc9-4aeb-b031-c56c7ed1dc7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/target/config-classes/$2e4c170e90da8ae677a0.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/target/config-classes/$63c4daace4aba206cc6a.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/target/config-classes/$7856948ab968dbf38690.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/target/config-classes/$af1f1228565ecc5bd3a4$.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/target/config-classes/$af1f1228565ecc5bd3a4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/target/config-classes/$eb3d7f41f3be2cd0eb48.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Proyecto_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/Proyecto.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Proyecto-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Proyecto-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/ProyectoTFG.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$007da1b945be967426ec$.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$2e4c170e90da8ae677a0$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$007da1b945be967426ec.cache" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$2e4c170e90da8ae677a0.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$007da1b945be967426ec.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$375536e9d1030103c732$.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$63c4daace4aba206cc6a$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$375536e9d1030103c732.cache" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$63c4daace4aba206cc6a.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$375536e9d1030103c732.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$56e42a0fd7e7d41434bf$.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$eb3d7f41f3be2cd0eb48$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$56e42a0fd7e7d41434bf.cache" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$7856948ab968dbf38690.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$56e42a0fd7e7d41434bf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$6073abeb565d90ad33e0$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$6073abeb565d90ad33e0.cache" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$af1f1228565ecc5bd3a4.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$6073abeb565d90ad33e0.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$dace33acd5dbf502be64$.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$7856948ab968dbf38690$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$dace33acd5dbf502be64.cache" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$eb3d7f41f3be2cd0eb48.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$dace33acd5dbf502be64.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$2e4c170e90da8ae677a0$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$2e4c170e90da8ae677a0.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$2e4c170e90da8ae677a0.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/proyecto-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/proyecto-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/proyecto-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/proyecto-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-compile-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-compile-internal.xml" afterDir="false" />
@@ -39,20 +32,7 @@
       <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-proyecto-build-test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/dependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/dependencyClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/externalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/externalDependencyClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/managedClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/managedClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/dependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/dependencyClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/externalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/externalDependencyClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/prueba/ModeloDT.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/prueba/ModeloDT.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/prueba/ModeloLR.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/prueba/ModeloLR.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/prueba/ModeloNaiveBayes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/prueba/ModeloNaiveBayes.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/prueba/ModeloSVM.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/prueba/ModeloSVM.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -82,6 +62,28 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Proyecto" type="f1a62948:ProjectNode" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Proyecto" type="f1a62948:ProjectNode" />
+                <item name="Proyecto" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Proyecto" type="f1a62948:ProjectNode" />
+                <item name="Proyecto" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Proyecto" type="f1a62948:ProjectNode" />
+                <item name="Proyecto-build" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Proyecto" type="f1a62948:ProjectNode" />
+                <item name="Proyecto-build" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -91,11 +93,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.sbt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+            <state relative-caret-position="105">
+              <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -103,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="45" column="59" lean-forward="true" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
+            <state relative-caret-position="243">
+              <caret line="198" column="32" selection-start-line="198" selection-start-column="32" selection-end-line="198" selection-end-column="32" />
               <folding>
                 <element signature="e#16#49#0" expanded="true" />
               </folding>
@@ -112,13 +114,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="599">
-              <caret line="45" column="35" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+            <state relative-caret-position="123">
+              <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
               <folding>
                 <element signature="e#16#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="82" column="19" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
+              <folding>
+                <element signature="e#16#47#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -149,7 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/build.sbt" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/Attribute.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/Dataset.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/Main.scala" />
@@ -158,9 +171,10 @@
         <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloLR.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloNaiveBayes.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloSVM.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala" />
+        <option value="$PROJECT_DIR$/build.sbt" />
       </list>
     </option>
   </component>
@@ -220,12 +234,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="C:/Program Files/SmartGit/git/bin/git.exe" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.14525692" />
+    <property name="project.structure.side.proportion" value="0.1583815" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="sbt.project.settings.configurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -247,7 +261,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainStacking">
+  <component name="RunManager" selected="Application.MainBagging">
     <configuration name="MainBagging" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="prueba.MainBagging" />
       <module name="ProyectoTFG" />
@@ -355,8 +369,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainStacking" />
         <item itemvalue="Application.MainBagging" />
+        <item itemvalue="Application.MainStacking" />
       </list>
     </recent_temporary>
   </component>
@@ -387,14 +401,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="3107929204051" />
-        <entry key="$PROJECT_DIR$/build.sbt" value="1332657674" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="99605212" />
         <entry key="$PROJECT_DIR$/project/build.properties" value="2567920773" />
-      </map>
-    </option>
-    <option name="projectSyncType">
-      <map>
-        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
       </map>
     </option>
   </component>
@@ -422,7 +430,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="952" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987805" visible="true" weight="0.17004265" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -438,15 +445,15 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3292683" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.3292683" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3292683" />
-      <window_info anchor="bottom" id="Build" order="10" weight="0.41585365" />
+      <window_info anchor="bottom" id="Build" order="10" visible="true" weight="0.41585365" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3292683" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info active="true" anchor="right" x="22" y="316" width="1876" height="303" id="Run" order="1" sideWeight="0.5012195" visible="true" weight="0.32675907" />
+      <window_info anchor="right" x="22" y="316" width="1876" height="303" id="Run" order="1" sideWeight="0.5012195" weight="0.32675907" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Maven" order="4" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="right" id="sbt" order="6" weight="0.32995737" />
+      <window_info active="true" anchor="right" id="sbt" order="6" visible="true" weight="0.32995737" />
     </layout>
   </component>
   <component name="editorHistoryManager">
@@ -464,13 +471,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/package.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/BaggingObjeto.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Prueba.scala" />
-    <entry file="file://$PROJECT_DIR$/build.sbt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Dataset.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -525,20 +525,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1237">
-          <caret line="97" column="132" selection-start-line="97" selection-start-column="132" selection-end-line="97" selection-end-column="132" />
-          <folding>
-            <element signature="e#16#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="45" column="59" lean-forward="true" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
+        <state relative-caret-position="243">
+          <caret line="198" column="32" selection-start-line="198" selection-start-column="32" selection-end-line="198" selection-end-column="32" />
           <folding>
             <element signature="e#16#49#0" expanded="true" />
           </folding>
@@ -547,11 +537,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="45" column="35" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+        <state relative-caret-position="123">
+          <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
           <folding>
             <element signature="e#16#49#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="82" column="19" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
+          <folding>
+            <element signature="e#16#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -560,11 +570,18 @@
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
-          <artifact-editor />
+          <artifact-editor>
+            <show-content>
+              <type id="artifact" />
+              <type id="library" />
+            </show-content>
+          </artifact-editor>
+          <last-edited>Proyecto:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.1583815" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -584,6 +601,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>scala-sdk-2.11.12</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -595,6 +613,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -606,11 +625,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Proyecto</last-edited>
+          <last-edited>Proyecto-build</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.35606936" />
               </list>
             </option>
           </splitter-proportions>
@@ -630,11 +649,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>activation-1.1.1</last-edited>
+          <last-edited>sbt: org.scala-lang:scala-library:2.11.12:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.35606936" />
               </list>
             </option>
           </splitter-proportions>

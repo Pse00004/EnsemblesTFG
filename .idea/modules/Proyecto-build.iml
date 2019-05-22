@@ -104,6 +104,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="scala-sdk-2.11.12" level="application" />
   </component>
   <component name="SbtModule">
     <option name="buildForURI" value="file:/$MODULE_DIR$/../../" />

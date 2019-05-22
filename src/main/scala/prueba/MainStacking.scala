@@ -231,7 +231,7 @@ object MainStacking {
             val mediaCV = sumaCV / 5
             println("Media CrossValidation: " + mediaCV)
 
-            println("Finalizado correctamnte")
+            println("Finalizado correctamente")
 
         }
     }

@@ -14756,7 +14756,7 @@
 [debug] 	[NOT REQUIRED] com.github.cb372#scalacache-core_2.12;0.20.0!scalacache-core_2.12.jar
 [debug] 	[NOT REQUIRED] com.github.ben-manes.caffeine#caffeine;2.5.6!caffeine.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt.ivy#ivy;2.3.0-sbt-cb9cc189e9f3af519f9f102e6c5d446488ff6832!ivy.jar
-[debug] :: resolution report :: resolve 6777ms :: artifacts dl 123ms
+[debug] :: resolution report :: resolve 5328ms :: artifacts dl 79ms
 [debug] 	report for default#proyecto-build;0.1.0-SNAPSHOT compile produced in C:\Users\Pls\Desktop\Proyecto\project\target\scala-2.12\sbt-1.0\resolution-cache\reports\default-proyecto-build-compile.xml
 [debug] 	report for default#proyecto-build;0.1.0-SNAPSHOT runtime produced in C:\Users\Pls\Desktop\Proyecto\project\target\scala-2.12\sbt-1.0\resolution-cache\reports\default-proyecto-build-runtime.xml
 [debug] 	report for default#proyecto-build;0.1.0-SNAPSHOT test produced in C:\Users\Pls\Desktop\Proyecto\project\target\scala-2.12\sbt-1.0\resolution-cache\reports\default-proyecto-build-test.xml
@@ -14768,5 +14768,5 @@
 [debug] 	report for default#proyecto-build;0.1.0-SNAPSHOT plugin produced in C:\Users\Pls\Desktop\Proyecto\project\target\scala-2.12\sbt-1.0\resolution-cache\reports\default-proyecto-build-plugin.xml
 [debug] 	report for default#proyecto-build;0.1.0-SNAPSHOT pom produced in C:\Users\Pls\Desktop\Proyecto\project\target\scala-2.12\sbt-1.0\resolution-cache\reports\default-proyecto-build-pom.xml
 [debug] 	report for default#proyecto-build;0.1.0-SNAPSHOT scala-tool produced in C:\Users\Pls\Desktop\Proyecto\project\target\scala-2.12\sbt-1.0\resolution-cache\reports\default-proyecto-build-scala-tool.xml
-[debug] 	resolve done (6777ms resolve - 123ms download)
+[debug] 	resolve done (5328ms resolve - 79ms download)
 [info] Done updating.
