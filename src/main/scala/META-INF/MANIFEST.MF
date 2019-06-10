@@ -95,5 +95,5 @@ Class-Path: scala-library-2.11.12.jar jets3t-0.9.4.jar commons-io-2.4.
  i-1.7.25.jar stream-2.7.0.jar curator-framework-2.6.0.jar api-util-1.
  0.0-M20.jar metrics-json-3.1.5.jar spire_2.11-0.13.0.jar jackson-anno
  tations-2.6.7.jar json4s-jackson_2.11-3.2.11.jar jline-0.9.94.jar
-Main-Class: prueba.MainStacking
+Main-Class: prueba.MainBagging
 

@@ -10,7 +10,7 @@ object MainBagging {
 
     def main(args: Array[String]) {
 
-        val t1 = System.nanoTime
+        val tiempoInicioPrograma = System.nanoTime
 
         val conf = new SparkConf().setAppName("ProyectoTFG").setMaster("local")
         val sc = new SparkContext(conf)
@@ -103,25 +103,29 @@ object MainBagging {
             DS.loadDataSet(ficheroEntrada, sc)
 
             DS.printAttributes()
-            DS.printInstances()
+            //DS.printInstances()
 
             val instancias = DS.getInstances
 
             val RDDdeLabeledPoint = instancias.map { x => LabeledPoint(DS.vectorToDouble(x._2), Vectors.dense(x._1.toArray)) }
 
-            RDDdeLabeledPoint.collect().foreach(println)
+            //RDDdeLabeledPoint.collect().foreach(println)
 
             // Dividir dataset en training y test
             val splits = RDDdeLabeledPoint.randomSplit(Array(0.2, 0.2, 0.2, 0.2, 0.2))
             var training: RDD[LabeledPoint] = null
             var test: RDD[LabeledPoint] = null
 
-            println(instancias.count())
-            println(RDDdeLabeledPoint.count())
+            //println(instancias.count())
+            //println(RDDdeLabeledPoint.count())
 
             var arrayPrecisionesCV = Array[Double]()
 
             for (indiceCV <- 0 to 4) {
+
+                println()
+                println("Ejecución número: " + indiceCV)
+                val tiempoInicioEjecucion = System.nanoTime
 
                 var trainingInstanciado = false
 
@@ -129,18 +133,18 @@ object MainBagging {
 
                     if (indiceCV == j) {
                         test = splits(j)
-                        println("Instancias Test: " + test.count())
+                        //println("Instancias Test: " + test.count())
                     }
                     else if (trainingInstanciado == false) {
                         training = splits(j)
-                        println("Instancias Training: " + training.count())
+                        //println("Instancias Training: " + training.count())
                         trainingInstanciado = true
                     }
                     else {
                         training = training.union(splits(j))
-                        println("Instancias Training: " + training.count())
+                        //println("Instancias Training: " + training.count())
                     }
-                    println("CV: " + j)
+                    println("Ejecutando instancia CrossValidation: " + j)
                 }
 
                 training.cache()
@@ -171,12 +175,12 @@ object MainBagging {
                     arrayCombinacionPredicciones :+= predicciones.take(test.count().toInt)
                 }
 
-                println("Numero instancias test: " + test.count())
+                //println("Numero instancias test: " + test.count())
 
-                for (l <- 0 to 4) {
+                /*for (l <- 0 to 4) {
                     arrayCombinacionPredicciones.apply(l).foreach((e: Double) => print(e + " "))
                     println()
-                }
+                }*/
 
                 val numAtributos = DS.getnOutput
 
@@ -224,22 +228,25 @@ object MainBagging {
                 var prediccionesCorrectas = 0
 
                 for (i <- 0 to test.count().toInt - 1) {
-                    println("Prediccion " + i + ": " + arrayPrediccionesFinal(i))
+                    //println("Prediccion " + i + ": " + arrayPrediccionesFinal(i))
                     if (arrayPrediccionesFinal(i) == clasesTest(i)) {
                         prediccionesCorrectas = prediccionesCorrectas + 1
                     }
                 }
 
-                println("Predicciones correctas: " + prediccionesCorrectas)
+                //println("Predicciones correctas: " + prediccionesCorrectas)
 
                 val precision = prediccionesCorrectas.toDouble / test.count()
                 arrayPrecisionesCV :+= precision
                 println("Precisión: " + precision)
 
-                val duration = (System.nanoTime - t1) / 1e9d
-                println("Tiempo desde el comienzo de ejecución: " + duration)
+                val duration = (System.nanoTime - tiempoInicioPrograma) / 1e9d
+                println("Tiempo desde el comienzo del programa: " + duration)
+                val duration2 = (System.nanoTime - tiempoInicioEjecucion) / 1e9d
+                println("Tiempo desde el comienzo de ejecución: " + duration2)
             }
 
+            println()
             println("Precisiones CrossValidation: ")
             for (i <- 0 to arrayPrecisionesCV.length - 1) {
                 println("Ejecución " + i + ": " + arrayPrecisionesCV(i))
