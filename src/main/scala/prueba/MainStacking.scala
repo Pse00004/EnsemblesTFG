@@ -122,7 +122,7 @@ object MainStacking {
             //val lines = sc.textFile("C:/Users/Pls/Desktop/iris.dat")
 
             val DS = new DataSet()
-            DS.loadDataSet(ficheroEntrada, sc)
+            DS.loadDataSet(ficheroEntrada, sc,4)
 
             DS.printAttributes()
             DS.printInstances()

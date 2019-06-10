@@ -19,6 +19,7 @@ object MainBagging {
         var argumentosCorrectos = false
         var ficheroEntrada = ""
         var ficheroSalida = ""
+        var numParticiones = 1
         var modelosLvl0 = Array[Array[String]]()
 
         if (args.length == 0) {
@@ -52,12 +53,13 @@ object MainBagging {
 
             ficheroEntrada = args.apply(0)
             ficheroSalida = args.apply(1)
+            numParticiones = args.apply(2).toInt
 
             var nivel = -1
             var contador = 0
             var indiceModelosLvl0 = -1
 
-            for (i <- 2 to args.length - 1) {
+            for (i <- 3 to args.length - 1) {
 
                 contador += 1
 
@@ -82,6 +84,7 @@ object MainBagging {
             } else {
                 println("Fichero de entrada especificado: " + ficheroEntrada)
                 println("Carpeta de salida especificada: " + ficheroSalida)
+                println("Número de pariciones especificado " + numParticiones)
 
                 println("Modelos de nivel 0 especificados: ")
                 for (i <- 0 to modelosLvl0.length - 1) {
@@ -100,7 +103,9 @@ object MainBagging {
             //val lines = sc.textFile("C:/Users/Pls/Desktop/iris.dat")
 
             val DS = new DataSet()
-            DS.loadDataSet(ficheroEntrada, sc)
+            DS.loadDataSet(ficheroEntrada, sc, numParticiones)
+
+            //println("Número de pariciones: " + instancias.getNumPartitions)
 
             DS.printAttributes()
             //DS.printInstances()
@@ -108,8 +113,6 @@ object MainBagging {
             val instancias = DS.getInstances
 
             val RDDdeLabeledPoint = instancias.map { x => LabeledPoint(DS.vectorToDouble(x._2), Vectors.dense(x._1.toArray)) }
-
-            //RDDdeLabeledPoint.collect().foreach(println)
 
             // Dividir dataset en training y test
             val splits = RDDdeLabeledPoint.randomSplit(Array(0.2, 0.2, 0.2, 0.2, 0.2))

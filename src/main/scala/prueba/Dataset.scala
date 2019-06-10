@@ -29,9 +29,9 @@ class DataSet extends Serializable {
 
     def getnInstances = this.nInstances
 
-    def loadDataSet(file: String, sc: SparkContext) = {
+    def loadDataSet(file: String, sc: SparkContext, numParticiones: Int) = {
 
-        val lines = sc.textFile(file).cache()
+        val lines = sc.textFile(file, numParticiones).cache()
 
         val head = lines.filter { line => line.startsWith("@") }
         val linesHead = head.filter { line => line.startsWith("@attribute") }
