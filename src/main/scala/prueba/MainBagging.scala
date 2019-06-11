@@ -24,7 +24,7 @@ object MainBagging {
 
         if (args.length == 0) {
             val usage =
-                """Uso: ficheroEntrada carpetaSalida
+                """Uso: ficheroEntrada carpetaSalida numParticiones
     -l0 [modelo] [argumentos_modelo]
         modelos a utilizar en el nivel 0, se debe repetir para introducir varios modelos
 
@@ -44,7 +44,7 @@ object MainBagging {
      Los modelos se deben introducir mediante sus iniciales
 
      Ejemplo de uso:
-          C:/iris.csv C:/resultados -l0 NB 1.0 -l0 NB 1.0 -l0 LR 10 -l0 LR 10 -l0 DT 3 5 32"""
+          C:/iris.dat C:/resultados 4 -l0 NB 1.0 -l0 NB 1.0 -l0 LR 10 -l0 LR 10 -l0 DT 3 5 32"""
 
             println(usage)
 
@@ -84,7 +84,7 @@ object MainBagging {
             } else {
                 println("Fichero de entrada especificado: " + ficheroEntrada)
                 println("Carpeta de salida especificada: " + ficheroSalida)
-                println("Número de pariciones especificado " + numParticiones)
+                println("Número de particiones especificado " + numParticiones)
 
                 println("Modelos de nivel 0 especificados: ")
                 for (i <- 0 to modelosLvl0.length - 1) {
@@ -105,7 +105,7 @@ object MainBagging {
             val DS = new DataSet()
             DS.loadDataSet(ficheroEntrada, sc, numParticiones)
 
-            //println("Número de pariciones: " + instancias.getNumPartitions)
+            //println("Número de particiones: " + instancias.getNumPartitions)
 
             DS.printAttributes()
             //DS.printInstances()
@@ -147,7 +147,7 @@ object MainBagging {
                         training = training.union(splits(j))
                         //println("Instancias Training: " + training.count())
                     }
-                    println("Ejecutando instancia CrossValidation: " + j)
+                    //println("Separar para CV: " + j)
                 }
 
                 training.cache()
@@ -241,22 +241,28 @@ object MainBagging {
 
                 val precision = prediccionesCorrectas.toDouble / test.count()
                 arrayPrecisionesCV :+= precision
-                println("Precisión: " + precision)
+                println("Precisión: " + (math rint precision * 100) / 100)
 
                 val duration = (System.nanoTime - tiempoInicioPrograma) / 1e9d
-                println("Tiempo desde el comienzo del programa: " + duration)
+                println("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s")
                 val duration2 = (System.nanoTime - tiempoInicioEjecucion) / 1e9d
-                println("Tiempo desde el comienzo de ejecución: " + duration2)
+                println("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s")
             }
 
             println()
             println("Precisiones CrossValidation: ")
+            var sumaCV = 0d
             for (i <- 0 to arrayPrecisionesCV.length - 1) {
-                println("Ejecución " + i + ": " + arrayPrecisionesCV(i))
+                println("Ejecución " + i + ": " + (math rint arrayPrecisionesCV(i) * 100) / 100)
+                sumaCV = sumaCV + arrayPrecisionesCV(i)
             }
+            val mediaCV = sumaCV / 5
+
+            println()
+            println("Precisión media: " + (math rint mediaCV * 100) / 100)
 
             //resultados.saveAsTextFile(ficheroSalida)
-            println("Finalizado correctamente")
+            println("Fin de ejecución")
         }
     }
 }

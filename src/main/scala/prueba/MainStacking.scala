@@ -10,7 +10,7 @@ object MainStacking {
 
     def main(args: Array[String]) {
 
-        val t1 = System.nanoTime
+        val tiempoInicioPrograma = System.nanoTime
 
         val conf = new SparkConf().setAppName("ProyectoTFG").setMaster("local")
         val sc = new SparkContext(conf)
@@ -19,12 +19,13 @@ object MainStacking {
         var argumentosCorrectos = false
         var ficheroEntrada = ""
         var ficheroSalida = ""
+        var numParticiones = 1
         var modelosLvl0 = Array[Array[String]]()
         var modeloLvl1 = Array[String]()
 
         if (args.length == 0) {
             val usage =
-                """Uso: ficheroEntrada carpetaSalida
+                """Uso: ficheroEntrada carpetaSalida numParticiones
      -l0 [modelo] [argumentos_modelo]
           modelos a utilizar en el nivel 0, se debe repetir para introducir varios modelos
      -l1 [modelo]
@@ -46,7 +47,7 @@ object MainStacking {
      Los modelos se deben introducir mediante sus iniciales
      
      Ejemplo de uso:
-          C:/iris.csv C:/resultados -l0 NB 1.0 -l0 DT 3 5 32 -l1 LR 100"""
+          C:/iris.csv C:/resultados 4 -l0 NB 1.0 -l0 DT 3 5 32 -l1 LR 100"""
 
             println(usage)
 
@@ -55,12 +56,13 @@ object MainStacking {
 
             ficheroEntrada = args.apply(0)
             ficheroSalida = args.apply(1)
+            numParticiones = args.apply(2).toInt
 
             var nivel = -1
             var contador = 0
             var indiceModelosLvl0 = -1
 
-            for (i <- 2 to args.length - 1) {
+            for (i <- 3 to args.length - 1) {
 
                 contador += 1
 
@@ -98,6 +100,7 @@ object MainStacking {
             } else {
                 println("Fichero de entrada especificado: " + ficheroEntrada)
                 println("Carpeta de salida especificada: " + ficheroSalida)
+                println("Número de particiones especificado " + numParticiones)
 
                 println("Modelos de nivel 0 especificados: ")
                 for (i <- 0 to modelosLvl0.length - 1) {
@@ -124,51 +127,51 @@ object MainStacking {
             val DS = new DataSet()
             DS.loadDataSet(ficheroEntrada, sc,4)
 
+            //println("Número de particiones: " + instancias.getNumPartitions)
+
             DS.printAttributes()
-            DS.printInstances()
+            //DS.printInstances()
 
             val instancias = DS.getInstances
 
             val RDDdeLabeledPoint = instancias.map { x => LabeledPoint(DS.vectorToDouble(x._2), Vectors.dense(x._1.toArray)) }
-
-            RDDdeLabeledPoint.collect().foreach(println)
-
-            var valoresCrossValidation = Array[Double]()
-
+            
             // Dividir dataset en training y test
             val splits = RDDdeLabeledPoint.randomSplit(Array(0.2, 0.2, 0.2, 0.2, 0.2))
-            //val training = splits(0).cache()
-            //val test = splits(1)
             var training: RDD[LabeledPoint] = null
             var test: RDD[LabeledPoint] = null
-            val numParticiones = 10
 
-            println(instancias.count())
-            println(RDDdeLabeledPoint.count())
-            //println("Tamaño splits")
-            //for(i <- splits){
-            //    println(i.count())
-            //}
+            //println(instancias.count())
+            //println(RDDdeLabeledPoint.count())
 
+            var arrayPrecisionesCV = Array[Double]()
+
+            val numParticionesStacking = 10
+            
             for (indiceCV <- 0 to 4) {
 
+                println()
+                println("Ejecución número: " + indiceCV)
+                val tiempoInicioEjecucion = System.nanoTime
+                
                 var trainingInstanciado = false
 
                 for (j <- 0 to 4) {
 
                     if (indiceCV == j) {
                         test = splits(j)
-                        println("Test: " + test.count())
+                        //println("Instancias Test: " + test.count())
                     }
                     else if (trainingInstanciado == false) {
                         training = splits(j)
+                        //println("Instancias Training: " + training.count())
                         trainingInstanciado = true
                     }
                     else {
                         training = training.union(splits(j))
-                        println("Training: " + training.count())
+                        //println("Instancias Training: " + training.count())
                     }
-                    println("CV: " + j)
+                    //println("Separar para CV: " + j)
                 }
 
                 training.cache()
@@ -176,14 +179,14 @@ object MainStacking {
                 //Paso 1
                 //Dividir el dataset en particiones
                 println("Realizando Paso 1")
-                val pesoParticiones = Array.fill(numParticiones)(1.0)
+                val pesoParticiones = Array.fill(numParticionesStacking)(1.0)
                 val arrayParticiones = training.randomSplit(pesoParticiones)
 
                 //Paso 5
                 //Repetir los pasos 2 a 4 mediante la función Stacking con varios modelos
                 var arrayResultadosNivel0 = Array[Array[RDD[LabeledPoint]]]()
                 for (i <- 0 to modelosLvl0.length - 1) {
-                    arrayResultadosNivel0 :+= StackingModelos.Stacking(arrayParticiones, test, numParticiones, modelosLvl0.apply(i))
+                    arrayResultadosNivel0 :+= StackingModelos.Stacking(arrayParticiones, test, numParticionesStacking, modelosLvl0.apply(i))
                 }
 
                 //Paso 6
@@ -209,30 +212,32 @@ object MainStacking {
                     //case "DT"  => ModeloDT.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt, modeloLvl1.apply(2).toInt, modeloLvl1.apply(3).toInt)
                 }
 
-                val valoresCombinacionTestDatasets = combinacionTestDatasets.map({ case LabeledPoint(v1, v2) => v2 })
-                val predicciones = modeloLR.predict(valoresCombinacionTestDatasets)
-                //val prediccionesTexto = predicciones.map(f => numeroAClase(f))
-                val resultados = valoresCombinacionTestDatasets.zip(predicciones)
+                //val valoresCombinacionTestDatasets = combinacionTestDatasets.map({ case LabeledPoint(v1, v2) => v2 })
+                //val predicciones = modeloLR.predict(valoresCombinacionTestDatasets)
+                //val resultados = valoresCombinacionTestDatasets.zip(predicciones)
 
-                println("Modelo nivel 1:")
-                valoresCrossValidation :+= ModeloLR.precisionModelo(modeloLR, test)
+                arrayPrecisionesCV :+= ModeloLR.precisionModelo(modeloLR, test)
 
-                val duration = (System.nanoTime - t1) / 1e9d
-                println("Tiempo desde el comienzo de ejecución: " + duration)
+                val duration = (System.nanoTime - tiempoInicioPrograma) / 1e9d
+                println("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s")
+                val duration2 = (System.nanoTime - tiempoInicioEjecucion) / 1e9d
+                println("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s")
             }
-            //resultados.saveAsTextFile(ficheroSalida)
-            println("Resultados CrossValidation: ")
 
+            println()
+            println("Precisiones CrossValidation: ")
             var sumaCV = 0d
-            for (i <- 0 to 4) {
-                println("CV " + i + ": " + valoresCrossValidation(i))
-                sumaCV = sumaCV + valoresCrossValidation(i)
+            for (i <- 0 to arrayPrecisionesCV.length - 1) {
+                println("Ejecución " + i + ": " + (math rint arrayPrecisionesCV(i) * 100) / 100)
+                sumaCV = sumaCV + arrayPrecisionesCV(i)
             }
             val mediaCV = sumaCV / 5
-            println("Media CrossValidation: " + mediaCV)
 
-            println("Finalizado correctamente")
+            println()
+            println("Precisión media: " + (math rint mediaCV * 100) / 100)
 
+            //resultados.saveAsTextFile(ficheroSalida)
+            println("Fin de ejecución")
         }
     }
 }
