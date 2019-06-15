@@ -125,7 +125,7 @@ object MainStacking {
             //val lines = sc.textFile("C:/Users/Pls/Desktop/iris.dat")
 
             val DS = new DataSet()
-            DS.loadDataSet(ficheroEntrada, sc,4)
+            DS.loadDataSet(ficheroEntrada, sc, 4)
 
             //println("Número de particiones: " + instancias.getNumPartitions)
 
@@ -135,106 +135,68 @@ object MainStacking {
             val instancias = DS.getInstances
 
             val RDDdeLabeledPoint = instancias.map { x => LabeledPoint(DS.vectorToDouble(x._2), Vectors.dense(x._1.toArray)) }
-            
-            // Dividir dataset en training y test
-            val splits = RDDdeLabeledPoint.randomSplit(Array(0.2, 0.2, 0.2, 0.2, 0.2))
-            var training: RDD[LabeledPoint] = null
-            var test: RDD[LabeledPoint] = null
 
+            // Dividir dataset en training y test
+            val splits = RDDdeLabeledPoint.randomSplit(Array(0.6, 0.4))
+            val training: RDD[LabeledPoint] = splits(0)
+            training.cache()
+            val test: RDD[LabeledPoint] = splits(1)
+
+            val tiempoInicioEjecucion = System.nanoTime
             //println(instancias.count())
             //println(RDDdeLabeledPoint.count())
 
-            var arrayPrecisionesCV = Array[Double]()
-
             val numParticionesStacking = 10
-            
-            for (indiceCV <- 0 to 4) {
 
-                println()
-                println("Ejecución número: " + indiceCV)
-                val tiempoInicioEjecucion = System.nanoTime
-                
-                var trainingInstanciado = false
 
-                for (j <- 0 to 4) {
+            //Paso 1
+            //Dividir el dataset en particiones
+            println("Realizando Paso 1")
+            val pesoParticiones = Array.fill(numParticionesStacking)(1.0)
+            val arrayParticiones = training.randomSplit(pesoParticiones)
 
-                    if (indiceCV == j) {
-                        test = splits(j)
-                        //println("Instancias Test: " + test.count())
-                    }
-                    else if (trainingInstanciado == false) {
-                        training = splits(j)
-                        //println("Instancias Training: " + training.count())
-                        trainingInstanciado = true
-                    }
-                    else {
-                        training = training.union(splits(j))
-                        //println("Instancias Training: " + training.count())
-                    }
-                    //println("Separar para CV: " + j)
-                }
-
-                training.cache()
-
-                //Paso 1
-                //Dividir el dataset en particiones
-                println("Realizando Paso 1")
-                val pesoParticiones = Array.fill(numParticionesStacking)(1.0)
-                val arrayParticiones = training.randomSplit(pesoParticiones)
-
-                //Paso 5
-                //Repetir los pasos 2 a 4 mediante la función Stacking con varios modelos
-                var arrayResultadosNivel0 = Array[Array[RDD[LabeledPoint]]]()
-                for (i <- 0 to modelosLvl0.length - 1) {
-                    arrayResultadosNivel0 :+= StackingModelos.Stacking(arrayParticiones, test, numParticionesStacking, modelosLvl0.apply(i))
-                }
-
-                //Paso 6
-                //Realizar un nuevo modelo con los resultados del training dataset en el paso anterior
-                println("Realizando Paso 6")
-                var combinacionTrainDatasets = arrayResultadosNivel0.apply(0).apply(0)
-                for (i <- 1 to modelosLvl0.length - 1) {
-                    combinacionTrainDatasets = combinacionTrainDatasets.union(arrayResultadosNivel0.apply(i).apply(0))
-                }
-
-                var combinacionTestDatasets = arrayResultadosNivel0.apply(0).apply(1)
-                for (i <- 1 to modelosLvl0.length - 1) {
-                    combinacionTestDatasets = combinacionTestDatasets.union(arrayResultadosNivel0.apply(i).apply(1))
-                }
-
-                //Paso 7
-                //Realizar predicciones con los resultados del test dataset en el paso 5
-                println("Realizando Paso 7")
-                val modeloLR = modeloLvl1.apply(0) match {
-                    //case "NB" => ModeloNaiveBayes.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toFloat)
-                    //case "SVM" => ModeloSVM.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt)
-                    case "LR" => ModeloLR.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt)
-                    //case "DT"  => ModeloDT.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt, modeloLvl1.apply(2).toInt, modeloLvl1.apply(3).toInt)
-                }
-
-                //val valoresCombinacionTestDatasets = combinacionTestDatasets.map({ case LabeledPoint(v1, v2) => v2 })
-                //val predicciones = modeloLR.predict(valoresCombinacionTestDatasets)
-                //val resultados = valoresCombinacionTestDatasets.zip(predicciones)
-
-                arrayPrecisionesCV :+= ModeloLR.precisionModelo(modeloLR, test)
-
-                val duration = (System.nanoTime - tiempoInicioPrograma) / 1e9d
-                println("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s")
-                val duration2 = (System.nanoTime - tiempoInicioEjecucion) / 1e9d
-                println("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s")
+            //Paso 5
+            //Repetir los pasos 2 a 4 mediante la función Stacking con varios modelos
+            var arrayResultadosNivel0 = Array[Array[RDD[LabeledPoint]]]()
+            for (i <- 0 to modelosLvl0.length - 1) {
+                arrayResultadosNivel0 :+= StackingModelos.Stacking(arrayParticiones, test, numParticionesStacking, modelosLvl0.apply(i))
             }
 
-            println()
-            println("Precisiones CrossValidation: ")
-            var sumaCV = 0d
-            for (i <- 0 to arrayPrecisionesCV.length - 1) {
-                println("Ejecución " + i + ": " + (math rint arrayPrecisionesCV(i) * 100) / 100)
-                sumaCV = sumaCV + arrayPrecisionesCV(i)
+            //Paso 6
+            //Realizar un nuevo modelo con los resultados del training dataset en el paso anterior
+            println("Realizando Paso 6")
+            var combinacionTrainDatasets = arrayResultadosNivel0.apply(0).apply(0)
+            for (i <- 1 to modelosLvl0.length - 1) {
+                combinacionTrainDatasets = combinacionTrainDatasets.union(arrayResultadosNivel0.apply(i).apply(0))
             }
-            val mediaCV = sumaCV / 5
+
+            var combinacionTestDatasets = arrayResultadosNivel0.apply(0).apply(1)
+            for (i <- 1 to modelosLvl0.length - 1) {
+                combinacionTestDatasets = combinacionTestDatasets.union(arrayResultadosNivel0.apply(i).apply(1))
+            }
+
+            //Paso 7
+            //Realizar predicciones con los resultados del test dataset en el paso 5
+            println("Realizando Paso 7")
+            val modeloLR = modeloLvl1.apply(0) match {
+                //case "NB" => ModeloNaiveBayes.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toFloat)
+                //case "SVM" => ModeloSVM.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt)
+                case "LR" => ModeloLR.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt)
+                //case "DT"  => ModeloDT.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt, modeloLvl1.apply(2).toInt, modeloLvl1.apply(3).toInt)
+            }
+
+            //val valoresCombinacionTestDatasets = combinacionTestDatasets.map({ case LabeledPoint(v1, v2) => v2 })
+            //val predicciones = modeloLR.predict(valoresCombinacionTestDatasets)
+            //val resultados = valoresCombinacionTestDatasets.zip(predicciones)
+
+
+            val duration = (System.nanoTime - tiempoInicioPrograma) / 1e9d
+            println("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s")
+            val duration2 = (System.nanoTime - tiempoInicioEjecucion) / 1e9d
+            println("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s")
 
             println()
-            println("Precisión media: " + (math rint mediaCV * 100) / 100)
+            println("Precisión final: " + (math rint ModeloLR.precisionModelo(modeloLR, test) * 100) / 100)
 
             //resultados.saveAsTextFile(ficheroSalida)
             println("Fin de ejecución")

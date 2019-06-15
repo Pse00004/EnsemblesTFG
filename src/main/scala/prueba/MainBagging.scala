@@ -115,151 +115,114 @@ object MainBagging {
             val RDDdeLabeledPoint = instancias.map { x => LabeledPoint(DS.vectorToDouble(x._2), Vectors.dense(x._1.toArray)) }
 
             // Dividir dataset en training y test
-            val splits = RDDdeLabeledPoint.randomSplit(Array(0.2, 0.2, 0.2, 0.2, 0.2))
-            var training: RDD[LabeledPoint] = null
-            var test: RDD[LabeledPoint] = null
+            val splits = RDDdeLabeledPoint.randomSplit(Array(0.6, 0.4))
+            val training: RDD[LabeledPoint] = splits(0)
+            training.cache()
+            val test: RDD[LabeledPoint] = splits(1)
 
+            val tiempoInicioEjecucion = System.nanoTime
             //println(instancias.count())
             //println(RDDdeLabeledPoint.count())
 
-            var arrayPrecisionesCV = Array[Double]()
 
-            for (indiceCV <- 0 to 4) {
+            val valoresTest = test.map({ case LabeledPoint(v1, v2) => v2 })
+            var arrayCombinacionPredicciones = Array[Array[Double]]()
 
+            for (k <- 0 to 4) {
+
+                println("Creando modelo " + k)
+
+                val subsetTraining = training.sample(true, 0.2d)
+
+                var predicciones: RDD[Double] = null
+
+                modelosLvl0.apply(k).apply(0) match {
+                    case "NB" => {
+                        val modelo = ModeloNaiveBayes.Modelo(subsetTraining, modelosLvl0.apply(k).apply(1).toFloat)
+                        predicciones = modelo.predict(valoresTest)
+                    }
+                    case "LR" => {
+                        val modelo = ModeloLR.Modelo(subsetTraining, modelosLvl0.apply(k).apply(1).toInt)
+                        predicciones = modelo.predict(valoresTest)
+                    }
+                    case "DT" => {
+                        val modelo = ModeloDT.Modelo(subsetTraining, modelosLvl0.apply(k).apply(1).toInt, modelosLvl0.apply(k).apply(2).toInt, modelosLvl0.apply(k).apply(3).toInt)
+                        predicciones = modelo.predict(valoresTest)
+                    }
+                }
+                arrayCombinacionPredicciones :+= predicciones.take(test.count().toInt)
+            }
+
+            //println("Numero instancias test: " + test.count())
+
+            /*for (l <- 0 to 4) {
+                arrayCombinacionPredicciones.apply(l).foreach((e: Double) => print(e + " "))
                 println()
-                println("Ejecución número: " + indiceCV)
-                val tiempoInicioEjecucion = System.nanoTime
+            }*/
 
-                var trainingInstanciado = false
+            val numAtributos = DS.getnOutput
 
-                for (j <- 0 to 4) {
+            var arrayAtributos = Array[Double]()
+            var arrayVeces = Array[Int]()
 
-                    if (indiceCV == j) {
-                        test = splits(j)
-                        //println("Instancias Test: " + test.count())
+            var arrayPrediccionesFinal = Array[Double]()
+
+            for (i <- 0 to numAtributos - 1) {
+                arrayAtributos :+= i.toDouble
+                arrayVeces :+= 0
+            }
+
+            for (instancia <- 0 to test.count().toInt - 1) {
+
+                for (indiceBootstrap <- 0 to 4) {
+
+                    for (indiceAtributo <- 0 to numAtributos - 1) {
+                        if (arrayCombinacionPredicciones.apply(indiceBootstrap).apply(instancia) == arrayAtributos.apply(indiceAtributo)) {
+                            arrayVeces(indiceAtributo) = arrayVeces(indiceAtributo) + 1
+                        }
                     }
-                    else if (trainingInstanciado == false) {
-                        training = splits(j)
-                        //println("Instancias Training: " + training.count())
-                        trainingInstanciado = true
-                    }
-                    else {
-                        training = training.union(splits(j))
-                        //println("Instancias Training: " + training.count())
-                    }
-                    //println("Separar para CV: " + j)
                 }
 
-                training.cache()
-
-                val valoresTest = test.map({ case LabeledPoint(v1, v2) => v2 })
-                var arrayCombinacionPredicciones = Array[Array[Double]]()
-
-                for (k <- 0 to 4) {
-
-                    val subsetTraining = training.sample(true, 0.2d)
-
-                    var predicciones: RDD[Double] = null
-
-                    modelosLvl0.apply(k).apply(0) match {
-                        case "NB" => {
-                            val modelo = ModeloNaiveBayes.Modelo(subsetTraining, modelosLvl0.apply(k).apply(1).toFloat)
-                            predicciones = modelo.predict(valoresTest)
-                        }
-                        case "LR" => {
-                            val modelo = ModeloLR.Modelo(subsetTraining, modelosLvl0.apply(k).apply(1).toInt)
-                            predicciones = modelo.predict(valoresTest)
-                        }
-                        case "DT" => {
-                            val modelo = ModeloDT.Modelo(subsetTraining, modelosLvl0.apply(k).apply(1).toInt, modelosLvl0.apply(k).apply(2).toInt, modelosLvl0.apply(k).apply(3).toInt)
-                            predicciones = modelo.predict(valoresTest)
-                        }
-                    }
-                    arrayCombinacionPredicciones :+= predicciones.take(test.count().toInt)
-                }
-
-                //println("Numero instancias test: " + test.count())
-
-                /*for (l <- 0 to 4) {
-                    arrayCombinacionPredicciones.apply(l).foreach((e: Double) => print(e + " "))
-                    println()
-                }*/
-
-                val numAtributos = DS.getnOutput
-
-                var arrayAtributos = Array[Double]()
-                var arrayVeces = Array[Int]()
-
-                var arrayPrediccionesFinal = Array[Double]()
+                var claseMasComun = 0d
+                var vecesMasComun = 0
 
                 for (i <- 0 to numAtributos - 1) {
-                    arrayAtributos :+= i.toDouble
-                    arrayVeces :+= 0
+
+                    if (arrayVeces(i) > vecesMasComun) {
+                        claseMasComun = arrayAtributos(i)
+                        vecesMasComun = arrayVeces(i)
+                    }
+                    arrayVeces(i) = 0
                 }
 
-                for (instancia <- 0 to test.count().toInt - 1) {
-
-                    for (indiceBootstrap <- 0 to 4) {
-
-                        for (indiceAtributo <- 0 to numAtributos - 1) {
-                            if (arrayCombinacionPredicciones.apply(indiceBootstrap).apply(instancia) == arrayAtributos.apply(indiceAtributo)) {
-                                arrayVeces(indiceAtributo) = arrayVeces(indiceAtributo) + 1
-                            }
-                        }
-                    }
-
-                    var claseMasComun = 0d
-                    var vecesMasComun = 0
-
-                    for (i <- 0 to numAtributos - 1) {
-
-                        if (arrayVeces(i) > vecesMasComun) {
-                            claseMasComun = arrayAtributos(i)
-                            vecesMasComun = arrayVeces(i)
-                        }
-                        arrayVeces(i) = 0
-                    }
-
-                    arrayPrediccionesFinal :+= claseMasComun
-                    //println("Instancia: " + instancia)
-                    //arrayVeces.foreach((e: Int) => print(e + " "))
-                    //print(" -> " + claseMasComun)
-                    //println()
-                }
-
-                val clasesTest = test.map({ case LabeledPoint(v1, v2) => v1 }).take(test.count().toInt)
-                var prediccionesCorrectas = 0
-
-                for (i <- 0 to test.count().toInt - 1) {
-                    //println("Prediccion " + i + ": " + arrayPrediccionesFinal(i))
-                    if (arrayPrediccionesFinal(i) == clasesTest(i)) {
-                        prediccionesCorrectas = prediccionesCorrectas + 1
-                    }
-                }
-
-                //println("Predicciones correctas: " + prediccionesCorrectas)
-
-                val precision = prediccionesCorrectas.toDouble / test.count()
-                arrayPrecisionesCV :+= precision
-                println("Precisión: " + (math rint precision * 100) / 100)
-
-                val duration = (System.nanoTime - tiempoInicioPrograma) / 1e9d
-                println("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s")
-                val duration2 = (System.nanoTime - tiempoInicioEjecucion) / 1e9d
-                println("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s")
+                arrayPrediccionesFinal :+= claseMasComun
+                //println("Instancia: " + instancia)
+                //arrayVeces.foreach((e: Int) => print(e + " "))
+                //print(" -> " + claseMasComun)
+                //println()
             }
 
-            println()
-            println("Precisiones CrossValidation: ")
-            var sumaCV = 0d
-            for (i <- 0 to arrayPrecisionesCV.length - 1) {
-                println("Ejecución " + i + ": " + (math rint arrayPrecisionesCV(i) * 100) / 100)
-                sumaCV = sumaCV + arrayPrecisionesCV(i)
-            }
-            val mediaCV = sumaCV / 5
+            val clasesTest = test.map({ case LabeledPoint(v1, v2) => v1 }).take(test.count().toInt)
+            var prediccionesCorrectas = 0
 
-            println()
-            println("Precisión media: " + (math rint mediaCV * 100) / 100)
+            for (i <- 0 to test.count().toInt - 1) {
+                //println("Prediccion " + i + ": " + arrayPrediccionesFinal(i))
+                if (arrayPrediccionesFinal(i) == clasesTest(i)) {
+                    prediccionesCorrectas = prediccionesCorrectas + 1
+                }
+            }
+
+            //println("Predicciones correctas: " + prediccionesCorrectas)
+
+            val precision = prediccionesCorrectas.toDouble / test.count()
+
+            println("Precisión final: " + (math rint precision * 100) / 100)
+
+            val duration = (System.nanoTime - tiempoInicioPrograma) / 1e9d
+            println("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s")
+            val duration2 = (System.nanoTime - tiempoInicioEjecucion) / 1e9d
+            println("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s")
+
 
             //resultados.saveAsTextFile(ficheroSalida)
             println("Fin de ejecución")
