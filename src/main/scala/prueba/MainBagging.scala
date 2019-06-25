@@ -93,23 +93,17 @@ object MainBagging {
                     }
                     println("")
                 }
+                println("-----")
                 argumentosCorrectos = true
             }
         }
 
         if (argumentosCorrectos == true) {
 
-            //val lines = sc.textFile(ficheroEntrada)
-
             val DS = new DataSet()
             DS.loadDataSet(ficheroEntrada, sc, numParticiones)
 
-            //println("Número de particiones: " + instancias.getNumPartitions)
-            //DS.printAttributes()
-            //DS.printInstances()
-
             val instancias = DS.getInstances
-
             val RDDdeLabeledPoint = instancias.map { x => LabeledPoint(DS.vectorToDouble(x._2), Vectors.dense(x._1.toArray)) }
 
             // Dividir dataset en training y test
@@ -195,7 +189,7 @@ object MainBagging {
                     prediccionesCorrectas = prediccionesCorrectas + 1
                 }
             }
-            
+
             val precision = prediccionesCorrectas.toDouble / test.count()
 
             println("Precisión final: " + (math rint precision * 100) / 100)

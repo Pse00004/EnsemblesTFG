@@ -114,26 +114,18 @@ object MainStacking {
                 for (i <- 0 to modeloLvl1.length - 1) {
                     print(modeloLvl1.apply(i) + " ")
                 }
-                println("")
+                println()
+                println("-----")
                 argumentosCorrectos = true
             }
         }
 
         if (argumentosCorrectos == true) {
 
-            //val lines = sc.textFile(ficheroEntrada)
-            //val lines = sc.textFile("C:/Users/Pls/Desktop/iris.dat")
-
             val DS = new DataSet()
-            DS.loadDataSet(ficheroEntrada, sc, 4)
-
-            //println("Número de particiones: " + instancias.getNumPartitions)
-
-            //DS.printAttributes()
-            //DS.printInstances()
+            DS.loadDataSet(ficheroEntrada, sc, numParticiones)
 
             val instancias = DS.getInstances
-
             val RDDdeLabeledPoint = instancias.map { x => LabeledPoint(DS.vectorToDouble(x._2), Vectors.dense(x._1.toArray)) }
 
             // Dividir dataset en training y test

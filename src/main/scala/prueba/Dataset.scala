@@ -46,7 +46,7 @@ class DataSet extends Serializable {
         loadAttributes(linesHead)
         loadInstances(linesInstances)
 
-        println("Inputs: " + nInput + " Outputs: " + nOutput + " Total attributes: " + nAttributes)
+        //println("Inputs: " + nInput + " Outputs: " + nOutput + " Total attributes: " + nAttributes)
     }
 
     def loadAttributes(lines: RDD[String]) = {
@@ -54,12 +54,12 @@ class DataSet extends Serializable {
         var io = ' '
         val wordsLines = lines.map(line => line.split("( *)(\\{)( *)|( *)(\\})( *)|( *)(\\[)( *)|( *)(\\])( *)|( *)(,)( *)| "))
 
-        println("Atributos: ")
+        //println("Atributos: ")
 
         attributes = wordsLines.collect().map {
             words =>
-                words.foreach((e: String) => print(e + " "))
-                println()
+                //words.foreach((e: String) => print(e + " "))
+                //println()
                 if (outputValues.indexOf(words(1)) != -1) {
                     io = 'o'
                 } else {
@@ -91,7 +91,7 @@ class DataSet extends Serializable {
 
     def loadInstances(lines: RDD[String]) = {
 
-        println("Numero de salidas: " + nOutput)
+        //println("Numero de salidas: " + nOutput)
 
         val outV = outputValues
 
