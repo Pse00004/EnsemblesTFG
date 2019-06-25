@@ -1,5 +1,6 @@
 package prueba
 
+import java.io.{File, PrintWriter}
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import org.apache.spark.rdd.RDD
@@ -24,7 +25,7 @@ object MainBagging {
 
         if (args.length == 0) {
             val usage =
-                """Uso: ficheroEntrada carpetaSalida numParticiones
+                """Uso: ficheroEntrada ficheroSalida numParticiones
     -l0 [modelo] [argumentos_modelo]
         modelos a utilizar en el nivel 0, se debe repetir para introducir varios modelos
 
@@ -40,11 +41,10 @@ object MainBagging {
 
 -------------------------------------------------------------------------------------------
 
-     La carpeta de salida debe estar vacía
      Los modelos se deben introducir mediante sus iniciales
 
      Ejemplo de uso:
-          C:/iris.dat C:/resultados 4 -l0 NB 1.0 -l0 NB 1.0 -l0 LR 10 -l0 LR 10 -l0 DT 3 5 32"""
+          C:/iris.dat C:/resultados.txt 4 -l0 NB 1.0 -l0 NB 1.0 -l0 LR 10 -l0 LR 10 -l0 DT 3 5 32"""
 
             println(usage)
 
@@ -83,7 +83,7 @@ object MainBagging {
                 println("Es necesario introducir 2 o más modelos de nivel 0")
             } else {
                 println("Fichero de entrada especificado: " + ficheroEntrada)
-                println("Carpeta de salida especificada: " + ficheroSalida)
+                println("Fichero de salida especificado: " + ficheroSalida)
                 println("Número de particiones especificado " + numParticiones)
 
                 println("Modelos de nivel 0 especificados: ")
@@ -100,14 +100,12 @@ object MainBagging {
         if (argumentosCorrectos == true) {
 
             //val lines = sc.textFile(ficheroEntrada)
-            //val lines = sc.textFile("C:/Users/Pls/Desktop/iris.dat")
 
             val DS = new DataSet()
             DS.loadDataSet(ficheroEntrada, sc, numParticiones)
 
             //println("Número de particiones: " + instancias.getNumPartitions)
-
-            DS.printAttributes()
+            //DS.printAttributes()
             //DS.printInstances()
 
             val instancias = DS.getInstances
@@ -121,14 +119,12 @@ object MainBagging {
             val test: RDD[LabeledPoint] = splits(1)
 
             val tiempoInicioEjecucion = System.nanoTime
-            //println(instancias.count())
-            //println(RDDdeLabeledPoint.count())
 
 
             val valoresTest = test.map({ case LabeledPoint(v1, v2) => v2 })
             var arrayCombinacionPredicciones = Array[Array[Double]]()
 
-            for (k <- 0 to 4) {
+            for (k <- 0 to modelosLvl0.length - 1) {
 
                 println("Creando modelo " + k)
 
@@ -153,13 +149,6 @@ object MainBagging {
                 arrayCombinacionPredicciones :+= predicciones.take(test.count().toInt)
             }
 
-            //println("Numero instancias test: " + test.count())
-
-            /*for (l <- 0 to 4) {
-                arrayCombinacionPredicciones.apply(l).foreach((e: Double) => print(e + " "))
-                println()
-            }*/
-
             val numAtributos = DS.getnOutput
 
             var arrayAtributos = Array[Double]()
@@ -174,7 +163,7 @@ object MainBagging {
 
             for (instancia <- 0 to test.count().toInt - 1) {
 
-                for (indiceBootstrap <- 0 to 4) {
+                for (indiceBootstrap <- 0 to modelosLvl0.length - 1) {
 
                     for (indiceAtributo <- 0 to numAtributos - 1) {
                         if (arrayCombinacionPredicciones.apply(indiceBootstrap).apply(instancia) == arrayAtributos.apply(indiceAtributo)) {
@@ -196,24 +185,17 @@ object MainBagging {
                 }
 
                 arrayPrediccionesFinal :+= claseMasComun
-                //println("Instancia: " + instancia)
-                //arrayVeces.foreach((e: Int) => print(e + " "))
-                //print(" -> " + claseMasComun)
-                //println()
             }
 
             val clasesTest = test.map({ case LabeledPoint(v1, v2) => v1 }).take(test.count().toInt)
             var prediccionesCorrectas = 0
 
             for (i <- 0 to test.count().toInt - 1) {
-                //println("Prediccion " + i + ": " + arrayPrediccionesFinal(i))
                 if (arrayPrediccionesFinal(i) == clasesTest(i)) {
                     prediccionesCorrectas = prediccionesCorrectas + 1
                 }
             }
-
-            //println("Predicciones correctas: " + prediccionesCorrectas)
-
+            
             val precision = prediccionesCorrectas.toDouble / test.count()
 
             println("Precisión final: " + (math rint precision * 100) / 100)
@@ -223,6 +205,23 @@ object MainBagging {
             val duration2 = (System.nanoTime - tiempoInicioEjecucion) / 1e9d
             println("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s")
 
+            val pw = new PrintWriter(new File(ficheroSalida))
+
+            pw.write("Fichero de entrada especificado: " + ficheroEntrada + "\n")
+            pw.write("Número de particiones especificado " + numParticiones + "\n")
+
+            pw.write("Modelos de nivel 0 especificados: " + "\n")
+            for (i <- 0 to modelosLvl0.length - 1) {
+                for (j <- 0 to modelosLvl0.apply(i).length - 1) {
+                    pw.write(modelosLvl0.apply(i).apply(j) + " ")
+                }
+                pw.write("\n")
+            }
+
+            pw.write("Precisión final: " + (math rint precision * 100) / 100 + "\n")
+            pw.write("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s" + "\n")
+            pw.write("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s" + "\n")
+            pw.close
 
             //resultados.saveAsTextFile(ficheroSalida)
             println("Fin de ejecución")

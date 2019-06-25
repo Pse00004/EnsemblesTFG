@@ -2,12 +2,371 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="ProyectoBagging:jar" />
-      <artifact name="ProyectoStacking:jar" />
+      <artifact name="Proyecto:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84548af3-0cc9-4aeb-b031-c56c7ed1dc7b" name="Default Changelist" comment="" />
+    <list default="true" id="84548af3-0cc9-4aeb-b031-c56c7ed1dc7b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ProyectoBagging_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Proyecto_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ProyectoStacking_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/Proyecto.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/RoaringBitmap-0.5.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/activation-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/aircompressor-0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/antlr4-runtime-4.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/aopalliance-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/aopalliance-repackaged-2.4.0-b34.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/apacheds-i18n-2.0.0-M15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/apacheds-kerberos-codec-2.0.0-M15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/api-asn1-api-1.0.0-M20.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/api-util-1.0.0-M20.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/arpack_combined_all-0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/arrow-format-0.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/arrow-memory-0.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/arrow-vector-0.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/avro-1.7.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/avro-ipc-1.7.7-tests.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/avro-ipc-1.7.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/avro-mapred-1.7.7-hadoop2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/base64-2.3.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/bcprov-jdk15on-1.52.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/breeze-macros_2.11-0.13.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/breeze_2.11-0.13.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/cglib-2.2.1-v20090111.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/chill-java-0.8.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/chill_2.11-0.8.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/commons-beanutils-1.7.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/commons-beanutils-core-1.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/commons-cli-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/commons-codec-1.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/commons-collections-3.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/commons-compiler-3.0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/commons-compress-1.4.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/commons-configuration-1.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/commons-crypto-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/commons-digester-1.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/commons-httpclient-3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/commons-io-2.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/commons-lang-2.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/commons-lang3-3.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/commons-math3-3.4.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/commons-net-2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/compress-lzf-1.0.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/core-1.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/curator-client-2.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/curator-framework-2.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/curator-recipes-2.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/flatbuffers-1.2.0-3f79e055.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/gson-2.2.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/guava-11.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/guice-3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hadoop-annotations-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hadoop-auth-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hadoop-client-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hadoop-common-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hadoop-hdfs-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hadoop-mapreduce-client-app-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hadoop-mapreduce-client-common-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hadoop-mapreduce-client-core-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hadoop-mapreduce-client-jobclient-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hadoop-mapreduce-client-shuffle-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hadoop-yarn-api-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hadoop-yarn-client-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hadoop-yarn-common-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hadoop-yarn-server-common-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hk2-api-2.4.0-b34.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hk2-locator-2.4.0-b34.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hk2-utils-2.4.0-b34.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/hppc-0.7.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/htrace-core-3.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/httpclient-4.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/httpcore-4.4.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/ivy-2.4.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jackson-annotations-2.6.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jackson-core-2.7.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jackson-core-asl-1.9.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jackson-databind-2.6.7.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jackson-jaxrs-1.9.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jackson-mapper-asl-1.9.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jackson-module-paranamer-2.7.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jackson-module-scala_2.11-2.6.7.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jackson-xc-1.9.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/janino-3.0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/java-xmlbuilder-1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/javassist-3.18.1-GA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/javax.annotation-api-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/javax.inject-1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/javax.inject-2.4.0-b34.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/javax.servlet-api-3.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/javax.ws.rs-api-2.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jaxb-api-2.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jcl-over-slf4j-1.7.16.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jersey-client-2.22.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jersey-common-2.22.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jersey-container-servlet-2.22.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jersey-container-servlet-core-2.22.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jersey-guava-2.22.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jersey-media-jaxb-2.22.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jersey-server-2.22.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jets3t-0.9.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jettison-1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jetty-util-6.1.26.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jline-0.9.94.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/joda-time-2.9.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/json4s-ast_2.11-3.2.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/json4s-core_2.11-3.2.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/json4s-jackson_2.11-3.2.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jsr305-3.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jtransforms-2.4.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/jul-to-slf4j-1.7.16.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/kryo-shaded-3.0.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/leveldbjni-all-1.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/log4j-1.2.17.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/lz4-java-1.4.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/machinist_2.11-0.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/macro-compat_2.11-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/metrics-core-3.1.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/metrics-graphite-3.1.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/metrics-json-3.1.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/metrics-jvm-3.1.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/minlog-1.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/netty-3.9.9.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/netty-all-4.1.17.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/objenesis-2.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/opencsv-2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/orc-core-1.4.4-nohive.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/orc-mapreduce-1.4.4-nohive.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/oro-2.0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/osgi-resource-locator-1.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/paranamer-2.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/parquet-column-1.8.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/parquet-common-1.8.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/parquet-encoding-1.8.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/parquet-format-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/parquet-hadoop-1.8.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/parquet-jackson-1.8.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/protobuf-java-2.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/py4j-0.10.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/pyrolite-4.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/scala-compiler-2.11.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/scala-library-2.11.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/scala-parser-combinators_2.11-1.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/scala-reflect-2.11.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/scala-xml_2.11-1.0.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/scalap-2.11.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/shapeless_2.11-2.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/slf4j-api-1.7.25.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/slf4j-log4j12-1.7.16.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/snappy-java-1.1.2.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/spark-catalyst_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/spark-core_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/spark-graphx_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/spark-kvstore_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/spark-launcher_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/spark-mllib-local_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/spark-mllib_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/spark-network-common_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/spark-network-shuffle_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/spark-sketch_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/spark-sql_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/spark-streaming_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/spark-tags_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/spark-unsafe_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/spire-macros_2.11-0.13.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/spire_2.11-0.13.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/stax-api-1.0-2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/stream-2.7.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/univocity-parsers-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/unused-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/validation-api-1.1.0.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/xbean-asm5-shaded-4.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/xercesImpl-2.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/xml-apis-1.3.04.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/xmlenc-0.52.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/xz-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/zookeeper-3.4.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoBagging_jar/zstd-jni-1.3.2-2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/Proyecto.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/RoaringBitmap-0.5.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/activation-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/aircompressor-0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/antlr4-runtime-4.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/aopalliance-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/aopalliance-repackaged-2.4.0-b34.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/apacheds-i18n-2.0.0-M15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/apacheds-kerberos-codec-2.0.0-M15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/api-asn1-api-1.0.0-M20.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/api-util-1.0.0-M20.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/arpack_combined_all-0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/arrow-format-0.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/arrow-memory-0.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/arrow-vector-0.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/avro-1.7.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/avro-ipc-1.7.7-tests.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/avro-ipc-1.7.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/avro-mapred-1.7.7-hadoop2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/base64-2.3.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/bcprov-jdk15on-1.52.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/breeze-macros_2.11-0.13.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/breeze_2.11-0.13.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/cglib-2.2.1-v20090111.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/chill-java-0.8.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/chill_2.11-0.8.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/commons-beanutils-1.7.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/commons-beanutils-core-1.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/commons-cli-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/commons-codec-1.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/commons-collections-3.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/commons-compiler-3.0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/commons-compress-1.4.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/commons-configuration-1.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/commons-crypto-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/commons-digester-1.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/commons-httpclient-3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/commons-io-2.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/commons-lang-2.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/commons-lang3-3.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/commons-math3-3.4.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/commons-net-2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/compress-lzf-1.0.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/core-1.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/curator-client-2.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/curator-framework-2.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/curator-recipes-2.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/flatbuffers-1.2.0-3f79e055.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/gson-2.2.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/guava-11.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/guice-3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hadoop-annotations-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hadoop-auth-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hadoop-client-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hadoop-common-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hadoop-hdfs-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hadoop-mapreduce-client-app-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hadoop-mapreduce-client-common-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hadoop-mapreduce-client-core-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hadoop-mapreduce-client-jobclient-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hadoop-mapreduce-client-shuffle-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hadoop-yarn-api-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hadoop-yarn-client-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hadoop-yarn-common-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hadoop-yarn-server-common-2.6.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hk2-api-2.4.0-b34.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hk2-locator-2.4.0-b34.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hk2-utils-2.4.0-b34.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/hppc-0.7.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/htrace-core-3.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/httpclient-4.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/httpcore-4.4.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/ivy-2.4.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jackson-annotations-2.6.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jackson-core-2.7.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jackson-core-asl-1.9.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jackson-databind-2.6.7.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jackson-jaxrs-1.9.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jackson-mapper-asl-1.9.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jackson-module-paranamer-2.7.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jackson-module-scala_2.11-2.6.7.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jackson-xc-1.9.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/janino-3.0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/java-xmlbuilder-1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/javassist-3.18.1-GA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/javax.annotation-api-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/javax.inject-1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/javax.inject-2.4.0-b34.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/javax.servlet-api-3.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/javax.ws.rs-api-2.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jaxb-api-2.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jcl-over-slf4j-1.7.16.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jersey-client-2.22.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jersey-common-2.22.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jersey-container-servlet-2.22.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jersey-container-servlet-core-2.22.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jersey-guava-2.22.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jersey-media-jaxb-2.22.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jersey-server-2.22.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jets3t-0.9.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jettison-1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jetty-util-6.1.26.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jline-0.9.94.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/joda-time-2.9.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/json4s-ast_2.11-3.2.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/json4s-core_2.11-3.2.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/json4s-jackson_2.11-3.2.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jsr305-3.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jtransforms-2.4.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/jul-to-slf4j-1.7.16.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/kryo-shaded-3.0.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/leveldbjni-all-1.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/log4j-1.2.17.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/lz4-java-1.4.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/machinist_2.11-0.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/macro-compat_2.11-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/metrics-core-3.1.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/metrics-graphite-3.1.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/metrics-json-3.1.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/metrics-jvm-3.1.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/minlog-1.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/netty-3.9.9.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/netty-all-4.1.17.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/objenesis-2.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/opencsv-2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/orc-core-1.4.4-nohive.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/orc-mapreduce-1.4.4-nohive.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/oro-2.0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/osgi-resource-locator-1.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/paranamer-2.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/parquet-column-1.8.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/parquet-common-1.8.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/parquet-encoding-1.8.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/parquet-format-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/parquet-hadoop-1.8.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/parquet-jackson-1.8.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/protobuf-java-2.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/py4j-0.10.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/pyrolite-4.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/scala-compiler-2.11.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/scala-library-2.11.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/scala-parser-combinators_2.11-1.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/scala-reflect-2.11.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/scala-xml_2.11-1.0.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/scalap-2.11.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/shapeless_2.11-2.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/slf4j-api-1.7.25.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/slf4j-log4j12-1.7.16.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/snappy-java-1.1.2.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/spark-catalyst_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/spark-core_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/spark-graphx_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/spark-kvstore_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/spark-launcher_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/spark-mllib-local_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/spark-mllib_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/spark-network-common_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/spark-network-shuffle_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/spark-sketch_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/spark-sql_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/spark-streaming_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/spark-tags_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/spark-unsafe_2.11-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/spire-macros_2.11-0.13.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/spire_2.11-0.13.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/stax-api-1.0-2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/stream-2.7.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/univocity-parsers-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/unused-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/validation-api-1.1.0.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/xbean-asm5-shaded-4.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/xercesImpl-2.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/xml-apis-1.3.04.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/xmlenc-0.52.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/xz-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/zookeeper-3.4.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoStacking_jar/zstd-jni-1.3.2-2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -71,7 +430,7 @@
         <entry file="file://$PROJECT_DIR$/build.sbt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -79,10 +438,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="166" column="40" lean-forward="true" selection-start-line="166" selection-start-column="40" selection-end-line="166" selection-end-column="40" />
+            <state relative-caret-position="-472">
+              <caret line="144" column="55" selection-start-line="144" selection-start-column="55" selection-end-line="144" selection-end-column="55" />
               <folding>
-                <element signature="e#16#49#0" expanded="true" />
+                <element signature="e#16#50#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,10 +450,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
+            <state relative-caret-position="427">
+              <caret line="197" column="12" selection-start-line="197" selection-start-column="12" selection-end-line="197" selection-end-column="12" />
               <folding>
-                <element signature="e#16#49#0" expanded="true" />
+                <element signature="e#16#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,10 +462,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="66" column="47" lean-forward="true" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+            <state relative-caret-position="758">
+              <caret line="51" column="17" lean-forward="true" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
               <folding>
                 <element signature="e#16#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/META-INF/MANIFEST.MF">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="67" column="70" lean-forward="true" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Dataset.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="33" column="23" lean-forward="true" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="31" />
+              <folding>
+                <element signature="e#16#52#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,6 +513,7 @@
       <find>ficheroentrada</find>
       <find>numparticiones</find>
       <find>sc.</find>
+      <find>numpa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,6 +533,7 @@
         <option value="$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala" />
         <option value="$PROJECT_DIR$/build.sbt" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/Dataset.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala" />
       </list>
@@ -201,6 +583,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Proyecto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
               <item name="prueba" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -213,16 +603,19 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/out" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/scala/META-INF" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.14525692" />
-    <property name="project.structure.side.proportion" value="0.1583815" />
+    <property name="project.structure.side.proportion" value="0.2796486" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="sbt.project.settings.configurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Pls\Desktop\Proyecto\src\main\scala\META-INF" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Pls\Desktop\Proyecto\src\main\scala\example" />
@@ -240,11 +633,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainBagging">
+  <component name="RunManager" selected="Application.MainStacking">
     <configuration name="MainBagging" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="prueba.MainBagging" />
       <module name="Proyecto" />
-      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../iris.dat CarpetaSalida 4 -l0 NB 1.0 -l0 NB 1.0 -l0 LR 10 -l0 LR 10 -l0 DT 3 5 32" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../iris.dat C:/SalidaBagging.txt 5 -l0 LR 10 -l0 LR 10 -l0 DT 3 5 32" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="prueba.*" />
@@ -258,7 +651,7 @@
     <configuration name="MainStacking" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="prueba.MainStacking" />
       <module name="Proyecto" />
-      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../iris.dat CarpetaSalida 4 -l0 NB 1.0 -l0 DT 3 5 32 -l1 LR 10" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../iris.dat C:/SalidaStacking.txt 5 -l0 LR 10 -l0 DT 3 5 32 -l0 DT 3 5 32 -l1 LR 10" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="prueba.*" />
@@ -409,6 +802,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="952" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4987805" visible="true" weight="0.1716418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -522,52 +916,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.sbt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="67" column="70" lean-forward="true" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="70" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Dataset.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="236">
+          <caret line="33" column="23" lean-forward="true" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="31" />
           <folding>
             <element signature="e#16#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="166" column="40" lean-forward="true" selection-start-line="166" selection-start-column="40" selection-end-line="166" selection-end-column="40" />
-          <folding>
-            <element signature="e#16#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="66" column="47" lean-forward="true" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+        <state relative-caret-position="758">
+          <caret line="51" column="17" lean-forward="true" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
           <folding>
             <element signature="e#16#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-472">
+          <caret line="144" column="55" selection-start-line="144" selection-start-column="55" selection-end-line="144" selection-end-column="55" />
+          <folding>
+            <element signature="e#16#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
+        <state relative-caret-position="427">
+          <caret line="197" column="12" selection-start-line="197" selection-start-column="12" selection-end-line="197" selection-end-column="12" />
           <folding>
-            <element signature="e#16#49#0" expanded="true" />
+            <element signature="e#16#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -583,7 +981,7 @@
               <type id="artifact" />
             </show-content>
           </artifact-editor>
-          <last-edited>ProyectoStacking:jar</last-edited>
+          <last-edited>Proyecto:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

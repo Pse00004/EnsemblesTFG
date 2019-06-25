@@ -1,5 +1,6 @@
 package prueba
 
+import java.io.{File, PrintWriter}
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import org.apache.spark.rdd.RDD
@@ -25,7 +26,7 @@ object MainStacking {
 
         if (args.length == 0) {
             val usage =
-                """Uso: ficheroEntrada carpetaSalida numParticiones
+                """Uso: ficheroEntrada ficheroSalida numParticiones
      -l0 [modelo] [argumentos_modelo]
           modelos a utilizar en el nivel 0, se debe repetir para introducir varios modelos
      -l1 [modelo]
@@ -42,12 +43,11 @@ object MainStacking {
           numClasses, maxDepth, maxBins
                                
 -------------------------------------------------------------------------------------------
-                        
-     La carpeta de salida debe estar vacía
+
      Los modelos se deben introducir mediante sus iniciales
      
      Ejemplo de uso:
-          C:/iris.csv C:/resultados 4 -l0 NB 1.0 -l0 DT 3 5 32 -l1 LR 100"""
+          C:/iris.csv C:/resultados.txt 4 -l0 NB 1.0 -l0 DT 3 5 32 -l1 LR 100"""
 
             println(usage)
 
@@ -99,7 +99,7 @@ object MainStacking {
                 println("Es necesario introducir un modelo de nivel 1")
             } else {
                 println("Fichero de entrada especificado: " + ficheroEntrada)
-                println("Carpeta de salida especificada: " + ficheroSalida)
+                println("Fichero de salida especificado: " + ficheroSalida)
                 println("Número de particiones especificado " + numParticiones)
 
                 println("Modelos de nivel 0 especificados: ")
@@ -129,7 +129,7 @@ object MainStacking {
 
             //println("Número de particiones: " + instancias.getNumPartitions)
 
-            DS.printAttributes()
+            //DS.printAttributes()
             //DS.printInstances()
 
             val instancias = DS.getInstances
@@ -143,8 +143,6 @@ object MainStacking {
             val test: RDD[LabeledPoint] = splits(1)
 
             val tiempoInicioEjecucion = System.nanoTime
-            //println(instancias.count())
-            //println(RDDdeLabeledPoint.count())
 
             val numParticionesStacking = 10
 
@@ -189,14 +187,36 @@ object MainStacking {
             //val predicciones = modeloLR.predict(valoresCombinacionTestDatasets)
             //val resultados = valoresCombinacionTestDatasets.zip(predicciones)
 
+            println()
+            println("Precisión final: " + (math rint ModeloLR.precisionModelo(modeloLR, test) * 100) / 100)
 
             val duration = (System.nanoTime - tiempoInicioPrograma) / 1e9d
             println("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s")
             val duration2 = (System.nanoTime - tiempoInicioEjecucion) / 1e9d
             println("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s")
 
-            println()
-            println("Precisión final: " + (math rint ModeloLR.precisionModelo(modeloLR, test) * 100) / 100)
+            val pw = new PrintWriter(new File(ficheroSalida))
+
+            pw.write("Fichero de entrada especificado: " + ficheroEntrada + "\n")
+            pw.write("Número de particiones especificado " + numParticiones + "\n")
+
+            pw.write("Modelos de nivel 0 especificados: "  + "\n")
+            for (i <- 0 to modelosLvl0.length - 1) {
+                for (j <- 0 to modelosLvl0.apply(i).length - 1) {
+                    pw.write(modelosLvl0.apply(i).apply(j) + " ")
+                }
+                pw.write("\n")
+            }
+
+            pw.write("Modelo de nivel 1 especificado: " + "\n")
+            for (i <- 0 to modeloLvl1.length - 1) {
+                pw.write(modeloLvl1.apply(i) + "\n")
+            }
+
+            pw.write("Precisión final: " + (math rint ModeloLR.precisionModelo(modeloLR, test) * 100) / 100 + "\n")
+            pw.write("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s" + "\n")
+            pw.write("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s" + "\n")
+            pw.close
 
             //resultados.saveAsTextFile(ficheroSalida)
             println("Fin de ejecución")
