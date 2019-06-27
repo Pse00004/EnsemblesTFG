@@ -11,11 +11,11 @@ object ModeloDT {
 
         // Train a DecisionTree model.
         //  Empty categoricalFeaturesInfo indicates all features are continuous.
-        val numClasses = 3
+        //val numClasses = 3
         val categoricalFeaturesInfo = Map[Int, Int]()
         val impurity = "gini"
-        val maxDepth = 5
-        val maxBins = 32
+        //val maxDepth = 5
+        //val maxBins = 32
 
         val model = DecisionTree.trainClassifier(datos, numClasses, categoricalFeaturesInfo,
             impurity, maxDepth, maxBins)
