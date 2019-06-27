@@ -2,7 +2,7 @@
   <artifact name="Proyecto:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/Proyecto_jar</output-path>
     <root id="root">
-      <element id="archive" name="Proyecto.jar">
+      <element id="archive" name="EjecutableProyecto.jar">
         <element id="directory" name="META-INF">
           <element id="file-copy" path="$PROJECT_DIR$/src/main/scala/META-INF/MANIFEST.MF" />
         </element>

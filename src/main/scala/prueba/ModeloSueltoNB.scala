@@ -2,12 +2,12 @@ package prueba
 
 import java.io.{File, PrintWriter}
 
-import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
+import org.apache.spark.{SparkConf, SparkContext}
 
-object ModeloSueltoLR {
+object ModeloSueltoNB {
 
     def main(args: Array[String]) {
 
@@ -61,9 +61,9 @@ object ModeloSueltoLR {
 
             val tiempoInicioEjecucion = System.nanoTime
 
-            println("Creando modelo LR")
+            println("Creando modelo Naive Bayes")
 
-            val modelo = ModeloLR.Modelo(training, 10   )
+            val modelo = ModeloNaiveBayes.Modelo(training, 1.0f   )
 
 
             //println("Precisión final: " + (math rint ModeloLR.precisionModelo(modelo, test) * 100) / 100)

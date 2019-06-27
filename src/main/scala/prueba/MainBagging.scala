@@ -13,14 +13,14 @@ object MainBagging {
 
         val tiempoInicioPrograma = System.nanoTime
 
-        val conf = new SparkConf().setAppName("ProyectoTFG").setMaster("local")
+        val conf = new SparkConf().setAppName("ProyectoTFG")
         val sc = new SparkContext(conf)
         sc.setLogLevel("ERROR")
 
         var argumentosCorrectos = false
         var ficheroEntrada = ""
         var ficheroSalida = ""
-        var numParticiones = 1
+        var numParticiones = -1
         var modelosLvl0 = Array[Array[String]]()
 
         if (args.length == 0) {
