@@ -118,6 +118,7 @@ object MainBagging {
             val valoresTest = test.map({ case LabeledPoint(v1, v2) => v2 })
             var arrayCombinacionPredicciones = Array[Array[Double]]()
 
+            //Crear subsets del dataset original y crear un modelo para cada uno
             for (k <- 0 to modelosLvl0.length - 1) {
 
                 println("Creando modelo " + k)
@@ -155,6 +156,7 @@ object MainBagging {
                 arrayVeces :+= 0
             }
 
+            //Realizar predicciones finales combinando las predicciones de los modelos creados
             for (instancia <- 0 to test.count().toInt - 1) {
 
                 for (indiceBootstrap <- 0 to modelosLvl0.length - 1) {
