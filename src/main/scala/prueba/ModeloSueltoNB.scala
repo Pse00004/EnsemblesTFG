@@ -66,7 +66,7 @@ object ModeloSueltoNB {
             val modelo = ModeloNaiveBayes.Modelo(training, 1.0f   )
 
 
-            //println("Precisión final: " + (math rint ModeloLR.precisionModelo(modelo, test) * 100) / 100)
+            println("Precisión: " + (math rint ModeloNaiveBayes.precisionModelo(modelo, test) * 100) / 100)
             val duration = (System.nanoTime - tiempoInicioPrograma) / 1e9d
             println("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s")
             val duration2 = (System.nanoTime - tiempoInicioEjecucion) / 1e9d

@@ -14,12 +14,12 @@ object ModeloNaiveBayes {
         return model
     }
 
-    def precisionModelo(model: NaiveBayesModel, test: RDD[LabeledPoint]) {
+    def precisionModelo(model: NaiveBayesModel, test: RDD[LabeledPoint]): Double = {
 
         val predictionAndLabel = test.map(p => (model.predict(p.features), p.label))
         val accuracy = 1.0 * predictionAndLabel.filter(x => x._1 == x._2).count() / test.count()
 
-        println("Precisión del modelo NaiveBayes: " + accuracy)
+        return accuracy
     }
 
 }
