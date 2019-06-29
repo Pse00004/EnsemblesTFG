@@ -2,18 +2,18 @@ package prueba
 
 import java.io.{File, PrintWriter}
 
-import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
+import org.apache.spark.{SparkConf, SparkContext}
 
-object ModeloSueltoLR {
+object ModeloSueltoDT {
 
     def main(args: Array[String]) {
 
         val tiempoInicioPrograma = System.nanoTime
 
-        val conf = new SparkConf().setAppName("ProyectoTFG")
+        val conf = new SparkConf().setAppName("ProyectoTFG").setMaster("local")
         val sc = new SparkContext(conf)
         sc.setLogLevel("ERROR")
 
@@ -26,7 +26,7 @@ object ModeloSueltoLR {
             val usage =
                 """Uso: ficheroEntrada ficheroSalida numParticiones
      Ejemplo de uso:
-          C:/iris.dat C:/resultados.txt 4 10"""
+          C:/iris.dat C:/resultados.txt 4 3 5 32"""
 
             println(usage)
 
@@ -61,12 +61,12 @@ object ModeloSueltoLR {
 
             val tiempoInicioEjecucion = System.nanoTime
 
-            println("Creando modelo LR")
+            println("Creando modelo DT")
 
-            val modelo = ModeloLR.Modelo(training, args.apply(3).toInt)
+            val modelo = ModeloDT.Modelo(training, args.apply(3).toInt, args.apply(4).toInt, args.apply(5).toInt)
 
 
-            println("Precisión: " + (math rint ModeloLR.precisionModelo(modelo, test) * 100) / 100)
+            println("Precisión: " + (math rint ModeloDT.precisionModelo(modelo, test) * 100) / 100)
             val duration = (System.nanoTime - tiempoInicioPrograma) / 1e9d
             println("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s")
             val duration2 = (System.nanoTime - tiempoInicioEjecucion) / 1e9d

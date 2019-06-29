@@ -26,7 +26,7 @@ object ModeloSueltoNB {
             val usage =
                 """Uso: ficheroEntrada ficheroSalida numParticiones
      Ejemplo de uso:
-          C:/iris.dat C:/resultados.txt 4 """
+          C:/iris.dat C:/resultados.txt 4 1.0"""
 
             println(usage)
 
@@ -63,7 +63,7 @@ object ModeloSueltoNB {
 
             println("Creando modelo Naive Bayes")
 
-            val modelo = ModeloNaiveBayes.Modelo(training, 1.0f   )
+            val modelo = ModeloNaiveBayes.Modelo(training, args.apply(3).toFloat)
 
 
             println("Precisión: " + (math rint ModeloNaiveBayes.precisionModelo(modelo, test) * 100) / 100)

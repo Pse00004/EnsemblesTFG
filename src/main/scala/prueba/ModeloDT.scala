@@ -23,7 +23,7 @@ object ModeloDT {
         return model
     }
 
-    def precisionModelo(model: DecisionTreeModel, test: RDD[LabeledPoint]) {
+    def precisionModelo(model: DecisionTreeModel, test: RDD[LabeledPoint]):Double = {
 
         // Evaluate model on test instances and compute test error
         val labelAndPreds = test.map { point =>
@@ -31,8 +31,8 @@ object ModeloDT {
             (point.label, prediction)
         }
         val testErr = labelAndPreds.filter(r => r._1 != r._2).count().toDouble / test.count()
-        println(s"Test Error = $testErr")
-        println(s"Learned classification tree model:\n ${model.toDebugString}")
+        return(1 - testErr)
+        //println(s"Learned classification tree model:\n ${model.toDebugString}")
     }
 
 }
