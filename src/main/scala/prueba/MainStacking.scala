@@ -168,19 +168,29 @@ object MainStacking {
             //Paso 7
             //Realizar predicciones con los resultados del test dataset en el paso 5
             println("Realizando Paso 7")
-            val modeloLR = modeloLvl1.apply(0) match {
-                //case "NB" => ModeloNaiveBayes.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toFloat)
-                //case "SVM" => ModeloSVM.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt)
-                case "LR" => ModeloLR.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt)
-                //case "DT"  => ModeloDT.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt, modeloLvl1.apply(2).toInt, modeloLvl1.apply(3).toInt)
+            val modeloFinal = modeloLvl1.apply(0) match {
+                case "NB" => {
+                    ModeloNaiveBayes.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toFloat)
+                    println()
+                    println("Precisión final: " + (math rint ModeloNaiveBayes.precisionModelo(modeloFinal, test) * 100) / 100)
+                }
+                case "LR" => {
+                    ModeloLR.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt)
+                    println()
+                    println("Precisión final: " + (math rint ModeloLR.precisionModelo(modeloFinal, test) * 100) / 100)
+                }
+                case "DT" => {
+                    ModeloDT.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt, modeloLvl1.apply(2).toInt, modeloLvl1.apply(3).toInt)
+                    println()
+                    println("Precisión final: " + (math rint ModeloDT.precisionModelo(modeloFinal, test) * 100) / 100)
+                }
             }
 
             //val valoresCombinacionTestDatasets = combinacionTestDatasets.map({ case LabeledPoint(v1, v2) => v2 })
             //val predicciones = modeloLR.predict(valoresCombinacionTestDatasets)
             //val resultados = valoresCombinacionTestDatasets.zip(predicciones)
 
-            println()
-            println("Precisión final: " + (math rint ModeloLR.precisionModelo(modeloLR, test) * 100) / 100)
+
 
             val duration = (System.nanoTime - tiempoInicioPrograma) / 1e9d
             println("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s")
@@ -192,7 +202,7 @@ object MainStacking {
             pw.write("Fichero de entrada especificado: " + ficheroEntrada + "\n")
             pw.write("Número de particiones especificado " + numParticiones + "\n")
 
-            pw.write("Modelos de nivel 0 especificados: "  + "\n")
+            pw.write("Modelos de nivel 0 especificados: " + "\n")
             for (i <- 0 to modelosLvl0.length - 1) {
                 for (j <- 0 to modelosLvl0.apply(i).length - 1) {
                     pw.write(modelosLvl0.apply(i).apply(j) + " ")
@@ -205,7 +215,7 @@ object MainStacking {
                 pw.write(modeloLvl1.apply(i) + "\n")
             }
 
-            pw.write("Precisión final: " + (math rint ModeloLR.precisionModelo(modeloLR, test) * 100) / 100 + "\n")
+            //pw.write("Precisión final: " + (math rint ModeloLR.precisionModelo(modeloFinal, test) * 100) / 100 + "\n")
             pw.write("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s" + "\n")
             pw.write("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s" + "\n")
             pw.close

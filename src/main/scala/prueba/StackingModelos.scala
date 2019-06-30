@@ -41,7 +41,6 @@ object StackingModelos {
                     val particionDevolver = prediccionParticion.zip(particionTratada).map({ case (v1, v2) => LabeledPoint(v1, v2) })
                     RDDcombinado :+= particionDevolver
                 }
-                //case "SVM" => ModeloSVM.Modelo(combinacionGruposParticiones, args.apply(1).toInt)
                 case "LR" => {
                     val modeloGrupoParticiones = ModeloLR.Modelo(combinacionGruposParticiones, args.apply(1).toInt)
 
@@ -84,7 +83,6 @@ object StackingModelos {
                 val RDDprediccionesTest = prediccion.zip(testLimpio).map({ case (v1, v2) => LabeledPoint(v1, v2) })
                 return Array(RDDprediccionesTraining, RDDprediccionesTest)
             }
-            //case "SVM" => ModeloSVM.Modelo(RDDprediccionesTraining, args.apply(1).toInt)
             case "LR" => {
                 val modelo = ModeloLR.Modelo(RDDprediccionesTraining, args.apply(1).toInt)
 
