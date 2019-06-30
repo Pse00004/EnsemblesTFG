@@ -13,7 +13,7 @@ object MainStacking {
 
         val tiempoInicioPrograma = System.nanoTime
 
-        val conf = new SparkConf().setAppName("ProyectoTFG")
+        val conf = new SparkConf().setAppName("ProyectoTFG").setMaster("local")
         val sc = new SparkContext(conf)
         sc.setLogLevel("ERROR")
 
@@ -151,6 +151,7 @@ object MainStacking {
             for (i <- 0 to modelosLvl0.length - 1) {
                 arrayResultadosNivel0 :+= StackingModelos.Stacking(arrayParticiones, test, numParticionesStacking, modelosLvl0.apply(i))
             }
+            println("Terminado Paso 5")
 
             //Paso 6
             //Realizar un nuevo modelo con los resultados del training dataset en el paso anterior
@@ -168,21 +169,112 @@ object MainStacking {
             //Paso 7
             //Realizar predicciones con los resultados del test dataset en el paso 5
             println("Realizando Paso 7")
-            val modeloFinal = modeloLvl1.apply(0) match {
+            modeloLvl1.apply(0) match {
                 case "NB" => {
-                    ModeloNaiveBayes.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toFloat)
-                    println()
-                    println("Precisión final: " + (math rint ModeloNaiveBayes.precisionModelo(modeloFinal, test) * 100) / 100)
+
+                    val modeloFinal = ModeloNaiveBayes.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toFloat)
+
+                    val precision = (math rint ModeloNaiveBayes.precisionModelo(modeloFinal, test) * 100) / 100
+                    println("Precisión final: " + (math rint precision * 100) / 100)
+
+                    val duration = (System.nanoTime - tiempoInicioPrograma) / 1e9d
+                    println("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s")
+                    val duration2 = (System.nanoTime - tiempoInicioEjecucion) / 1e9d
+                    println("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s")
+
+                    val pw = new PrintWriter(new File(ficheroSalida))
+
+                    pw.write("Fichero de entrada especificado: " + ficheroEntrada + "\n")
+                    pw.write("Número de particiones especificado " + numParticiones + "\n")
+
+                    pw.write("Modelos de nivel 0 especificados: " + "\n")
+                    for (i <- 0 to modelosLvl0.length - 1) {
+                        for (j <- 0 to modelosLvl0.apply(i).length - 1) {
+                            pw.write(modelosLvl0.apply(i).apply(j) + " ")
+                        }
+                        pw.write("\n")
+                    }
+
+                    pw.write("Modelo de nivel 1 especificado: " + "\n")
+                    for (i <- 0 to modeloLvl1.length - 1) {
+                        pw.write(modeloLvl1.apply(i) + "\n")
+                    }
+
+                    pw.write("Precisión final: " + precision + "\n")
+                    pw.write("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s" + "\n")
+                    pw.write("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s" + "\n")
+                    pw.close
                 }
                 case "LR" => {
-                    ModeloLR.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt)
-                    println()
-                    println("Precisión final: " + (math rint ModeloLR.precisionModelo(modeloFinal, test) * 100) / 100)
+
+                    val modeloFinal = ModeloLR.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt)
+
+                    val precision = (math rint ModeloLR.precisionModelo(modeloFinal, test) * 100) / 100
+                    println("Precisión final: " + (math rint precision * 100) / 100)
+
+                    val duration = (System.nanoTime - tiempoInicioPrograma) / 1e9d
+                    println("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s")
+                    val duration2 = (System.nanoTime - tiempoInicioEjecucion) / 1e9d
+                    println("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s")
+
+                    val pw = new PrintWriter(new File(ficheroSalida))
+
+                    pw.write("Fichero de entrada especificado: " + ficheroEntrada + "\n")
+                    pw.write("Número de particiones especificado " + numParticiones + "\n")
+
+                    pw.write("Modelos de nivel 0 especificados: " + "\n")
+                    for (i <- 0 to modelosLvl0.length - 1) {
+                        for (j <- 0 to modelosLvl0.apply(i).length - 1) {
+                            pw.write(modelosLvl0.apply(i).apply(j) + " ")
+                        }
+                        pw.write("\n")
+                    }
+
+                    pw.write("Modelo de nivel 1 especificado: " + "\n")
+                    for (i <- 0 to modeloLvl1.length - 1) {
+                        pw.write(modeloLvl1.apply(i) + "\n")
+                    }
+
+                    pw.write("Precisión final: " + precision + "\n")
+                    pw.write("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s" + "\n")
+                    pw.write("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s" + "\n")
+                    pw.close
                 }
+
                 case "DT" => {
-                    ModeloDT.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt, modeloLvl1.apply(2).toInt, modeloLvl1.apply(3).toInt)
-                    println()
-                    println("Precisión final: " + (math rint ModeloDT.precisionModelo(modeloFinal, test) * 100) / 100)
+
+                    val modeloFinal = ModeloDT.Modelo(combinacionTrainDatasets, modeloLvl1.apply(1).toInt, modeloLvl1.apply(2).toInt, modeloLvl1.apply(3).toInt)
+
+                    val precision = (math rint ModeloDT.precisionModelo(modeloFinal, test) * 100) / 100
+                    println("Precisión final: " + (math rint precision * 100) / 100)
+
+                    val duration = (System.nanoTime - tiempoInicioPrograma) / 1e9d
+                    println("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s")
+                    val duration2 = (System.nanoTime - tiempoInicioEjecucion) / 1e9d
+                    println("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s")
+
+                    val pw = new PrintWriter(new File(ficheroSalida))
+
+                    pw.write("Fichero de entrada especificado: " + ficheroEntrada + "\n")
+                    pw.write("Número de particiones especificado " + numParticiones + "\n")
+
+                    pw.write("Modelos de nivel 0 especificados: " + "\n")
+                    for (i <- 0 to modelosLvl0.length - 1) {
+                        for (j <- 0 to modelosLvl0.apply(i).length - 1) {
+                            pw.write(modelosLvl0.apply(i).apply(j) + " ")
+                        }
+                        pw.write("\n")
+                    }
+
+                    pw.write("Modelo de nivel 1 especificado: " + "\n")
+                    for (i <- 0 to modeloLvl1.length - 1) {
+                        pw.write(modeloLvl1.apply(i) + "\n")
+                    }
+
+                    pw.write("Precisión final: " + precision + "\n")
+                    pw.write("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s" + "\n")
+                    pw.write("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s" + "\n")
+                    pw.close
                 }
             }
 
@@ -190,38 +282,9 @@ object MainStacking {
             //val predicciones = modeloLR.predict(valoresCombinacionTestDatasets)
             //val resultados = valoresCombinacionTestDatasets.zip(predicciones)
 
-
-
-            val duration = (System.nanoTime - tiempoInicioPrograma) / 1e9d
-            println("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s")
-            val duration2 = (System.nanoTime - tiempoInicioEjecucion) / 1e9d
-            println("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s")
-
-            val pw = new PrintWriter(new File(ficheroSalida))
-
-            pw.write("Fichero de entrada especificado: " + ficheroEntrada + "\n")
-            pw.write("Número de particiones especificado " + numParticiones + "\n")
-
-            pw.write("Modelos de nivel 0 especificados: " + "\n")
-            for (i <- 0 to modelosLvl0.length - 1) {
-                for (j <- 0 to modelosLvl0.apply(i).length - 1) {
-                    pw.write(modelosLvl0.apply(i).apply(j) + " ")
-                }
-                pw.write("\n")
-            }
-
-            pw.write("Modelo de nivel 1 especificado: " + "\n")
-            for (i <- 0 to modeloLvl1.length - 1) {
-                pw.write(modeloLvl1.apply(i) + "\n")
-            }
-
-            //pw.write("Precisión final: " + (math rint ModeloLR.precisionModelo(modeloFinal, test) * 100) / 100 + "\n")
-            pw.write("Tiempo desde el comienzo del programa: " + (math rint duration * 100) / 100 + "s" + "\n")
-            pw.write("Tiempo de ejecución: " + (math rint duration2 * 100) / 100 + "s" + "\n")
-            pw.close
-
             //resultados.saveAsTextFile(ficheroSalida)
             println("Fin de ejecución")
         }
     }
+
 }
