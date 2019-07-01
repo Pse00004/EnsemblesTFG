@@ -6,13 +6,13 @@ import org.apache.spark.mllib.regression.LabeledPoint
 
 object StackingModelos {
 
-    def Stacking(particiones: Array[RDD[LabeledPoint]], test: RDD[LabeledPoint], numParticiones: Int, args: Array[String]): Array[RDD[LabeledPoint]] = {
+    def Stacking(particiones: Array[RDD[LabeledPoint]], test: RDD[LabeledPoint], numParticiones: Int, args: Array[String], numModelo: Int): Array[RDD[LabeledPoint]] = {
 
         var RDDcombinado = Array[RDD[LabeledPoint]]()
 
         //Paso 2
         //Para cada partición, realizar un modelo con las demás y realizar una predicción para ella
-        println("Realizando Paso 2 para: " + args.apply(0))
+        println("Realizando Paso 2 para modelo " + numModelo)
         for (indiceParticion <- 0 to numParticiones - 1) {
 
             var arrayGruposParticiones = Array[RDD[LabeledPoint]]()
@@ -63,7 +63,7 @@ object StackingModelos {
 
         //Paso 3
         //Combinar los resultados de todas las particiones
-        println("Realizando Paso 3 para: " + args.apply(0))
+        println("Realizando Paso 3 para " + numModelo)
         var RDDprediccionesTraining = RDDcombinado.apply(0)
 
         for (i <- 1 to numParticiones - 2) {
@@ -77,31 +77,30 @@ object StackingModelos {
             case "NB" => {
                 val modelo = ModeloNaiveBayes.Modelo(RDDprediccionesTraining, args.apply(1).toFloat)
 
-                println("Realizando Paso 4 para: " + args.apply(0))
+                println("Realizando Paso 4 para " + numModelo)
                 val testLimpio = test.map({ case LabeledPoint(v1, v2) => v2 })
                 val prediccion = modelo.predict(testLimpio)
                 val RDDprediccionesTest = prediccion.zip(testLimpio).map({ case (v1, v2) => LabeledPoint(v1, v2) })
-                return Array(RDDprediccionesTraining, RDDprediccionesTest)
+                Array(RDDprediccionesTraining, RDDprediccionesTest)
             }
             case "LR" => {
                 val modelo = ModeloLR.Modelo(RDDprediccionesTraining, args.apply(1).toInt)
 
-                println("Realizando Paso 4 para: " + args.apply(0))
+                println("Realizando Paso 4 para " + numModelo)
                 val testLimpio = test.map({ case LabeledPoint(v1, v2) => v2 })
                 val prediccion = modelo.predict(testLimpio)
                 val RDDprediccionesTest = prediccion.zip(testLimpio).map({ case (v1, v2) => LabeledPoint(v1, v2) })
-                return Array(RDDprediccionesTraining, RDDprediccionesTest)
+                Array(RDDprediccionesTraining, RDDprediccionesTest)
             }
             case "DT" => {
                 val modelo = ModeloDT.Modelo(RDDprediccionesTraining, args.apply(1).toInt, args.apply(2).toInt, args.apply(3).toInt)
 
-                println("Realizando Paso 4 para: " + args.apply(0))
+                println("Realizando Paso 4 para " + numModelo)
                 val testLimpio = test.map({ case LabeledPoint(v1, v2) => v2 })
                 val prediccion = modelo.predict(testLimpio)
                 val RDDprediccionesTest = prediccion.zip(testLimpio).map({ case (v1, v2) => LabeledPoint(v1, v2) })
-                return Array(RDDprediccionesTraining, RDDprediccionesTest)
+                Array(RDDprediccionesTraining, RDDprediccionesTest)
             }
         }
-
     }
 }

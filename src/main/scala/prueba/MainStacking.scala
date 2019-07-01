@@ -1,11 +1,15 @@
 package prueba
 
 import java.io.{File, PrintWriter}
+
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import org.apache.spark.rdd.RDD
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.regression.LabeledPoint
+
+import scala.concurrent.{Future}
+import scala.concurrent.ExecutionContext.Implicits.global
 
 object MainStacking {
 
@@ -145,12 +149,47 @@ object MainStacking {
             val pesoParticiones = Array.fill(numParticionesStacking)(1.0)
             val arrayParticiones = training.randomSplit(pesoParticiones)
 
+
             //Paso 5
             //Repetir los pasos 2 a 4 mediante la función Stacking con varios modelos
+            var arrayFutures = Array[Future[Array[RDD[LabeledPoint]]]]()
             var arrayResultadosNivel0 = Array[Array[RDD[LabeledPoint]]]()
-            for (i <- 0 to modelosLvl0.length - 1) {
-                arrayResultadosNivel0 :+= StackingModelos.Stacking(arrayParticiones, test, numParticionesStacking, modelosLvl0.apply(i))
+
+            def subsetModelo(numModelo: Int): Future[Array[RDD[LabeledPoint]]] = Future {
+
+                StackingModelos.Stacking(arrayParticiones, test, numParticionesStacking, modelosLvl0.apply(numModelo),numModelo)
             }
+
+            for (k <- 0 to modelosLvl0.length - 1) {
+                println("Comenzar hilo de modelo " + k)
+                arrayFutures :+= subsetModelo(k)
+            }
+
+            var numModelosFinalizados = 0
+
+            //Espera para comprobar que se ejecuta concurrentemente
+            //Thread.sleep(10000)
+
+            for (k <- 0 to modelosLvl0.length - 1) {
+
+                val result = for {
+                    r1 <- arrayFutures.apply(k)
+                } yield (r1)
+
+                result onSuccess {
+                    case result => {
+                        println("Obteniendo resultado de modelo " + k)
+                        arrayResultadosNivel0 :+= result
+                        numModelosFinalizados = numModelosFinalizados + 1
+                    }
+                }
+            }
+
+            while (numModelosFinalizados != modelosLvl0.length) {
+                //println(numModelosFinalizados)
+                Thread.sleep(100)
+            }
+
             println("Terminado Paso 5")
 
             //Paso 6
