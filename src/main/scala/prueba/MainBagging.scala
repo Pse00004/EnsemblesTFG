@@ -7,13 +7,18 @@ import org.apache.spark.rdd.RDD
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.regression.LabeledPoint
 
+import scala.concurrent.{Await, Future}
+import scala.concurrent.duration._
+import scala.concurrent.ExecutionContext.Implicits.global
+
+
 object MainBagging {
 
     def main(args: Array[String]) {
 
         val tiempoInicioPrograma = System.nanoTime
 
-        val conf = new SparkConf().setAppName("ProyectoTFG")
+        val conf = new SparkConf().setAppName("ProyectoTFG").setMaster("local")
         val sc = new SparkContext(conf)
         sc.setLogLevel("ERROR")
 
@@ -118,30 +123,64 @@ object MainBagging {
             val valoresTest = test.map({ case LabeledPoint(v1, v2) => v2 })
             var arrayCombinacionPredicciones = Array[Array[Double]]()
 
-            //Crear subsets del dataset original y crear un modelo para cada uno
-            for (k <- 0 to modelosLvl0.length - 1) {
+            var arrayFutures = Array[Future[RDD[Double]]]()
 
-                println("Creando modelo " + k)
+            //Función para crear un subset del dataset original y un modelo
+            def subsetModelo(numModelo: Int): Future[RDD[Double]] = Future {
+
+                println("Creando modelo " + numModelo)
 
                 val subsetTraining = training.sample(true, 0.2d)
 
                 var predicciones: RDD[Double] = null
 
-                modelosLvl0.apply(k).apply(0) match {
+                modelosLvl0.apply(numModelo).apply(0) match {
                     case "NB" => {
-                        val modelo = ModeloNaiveBayes.Modelo(subsetTraining, modelosLvl0.apply(k).apply(1).toFloat)
+                        val modelo = ModeloNaiveBayes.Modelo(subsetTraining, modelosLvl0.apply(numModelo).apply(1).toFloat)
                         predicciones = modelo.predict(valoresTest)
                     }
                     case "LR" => {
-                        val modelo = ModeloLR.Modelo(subsetTraining, modelosLvl0.apply(k).apply(1).toInt)
+                        val modelo = ModeloLR.Modelo(subsetTraining, modelosLvl0.apply(numModelo).apply(1).toInt)
                         predicciones = modelo.predict(valoresTest)
                     }
                     case "DT" => {
-                        val modelo = ModeloDT.Modelo(subsetTraining, modelosLvl0.apply(k).apply(1).toInt, modelosLvl0.apply(k).apply(2).toInt, modelosLvl0.apply(k).apply(3).toInt)
+                        val modelo = ModeloDT.Modelo(subsetTraining, modelosLvl0.apply(numModelo).apply(1).toInt, modelosLvl0.apply(numModelo).apply(2).toInt, modelosLvl0.apply(numModelo).apply(3).toInt)
                         predicciones = modelo.predict(valoresTest)
                     }
                 }
-                arrayCombinacionPredicciones :+= predicciones.take(test.count().toInt)
+                println("Terminado modelo " + numModelo)
+                predicciones
+            }
+
+            //Crear subsets del dataset original y crear un modelo para cada uno
+            for (k <- 0 to modelosLvl0.length - 1) {
+                println("Comenzar hilo de modelo " + k)
+                arrayFutures :+= subsetModelo(k)
+            }
+
+            var numModelosFinalizados = 0
+
+            //Espera para comprobar que se ejecuta concurrentemente
+            //Thread.sleep(10000)
+
+            for (k <- 0 to modelosLvl0.length - 1) {
+
+                val result = for {
+                    r1 <- arrayFutures.apply(k)
+                } yield (r1)
+
+                result onSuccess {
+                    case result => {
+                        println("Obteniendo resultado de modelo " + k)
+                        arrayCombinacionPredicciones :+= result.take(test.count().toInt)
+                        numModelosFinalizados = numModelosFinalizados + 1
+                    }
+                }
+            }
+
+            while (numModelosFinalizados != modelosLvl0.length) {
+                //println(numModelosFinalizados)
+                Thread.sleep(100)
             }
 
             val numAtributos = DS.getnOutput
