@@ -17,7 +17,7 @@ object MainStacking {
 
         val tiempoInicioPrograma = System.nanoTime
 
-        val conf = new SparkConf().setAppName("ProyectoTFG").setMaster("local")
+        val conf = new SparkConf().setAppName("ProyectoTFG")
         val sc = new SparkContext(conf)
         sc.setLogLevel("ERROR")
 

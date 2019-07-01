@@ -7,8 +7,7 @@ import org.apache.spark.rdd.RDD
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.regression.LabeledPoint
 
-import scala.concurrent.{Await, Future}
-import scala.concurrent.duration._
+import scala.concurrent.{Future}
 import scala.concurrent.ExecutionContext.Implicits.global
 
 
@@ -18,7 +17,7 @@ object MainBagging {
 
         val tiempoInicioPrograma = System.nanoTime
 
-        val conf = new SparkConf().setAppName("ProyectoTFG").setMaster("local")
+        val conf = new SparkConf().setAppName("ProyectoTFG")
         val sc = new SparkContext(conf)
         sc.setLogLevel("ERROR")
 
@@ -121,8 +120,8 @@ object MainBagging {
 
 
             val valoresTest = test.map({ case LabeledPoint(v1, v2) => v2 })
-            var arrayCombinacionPredicciones = Array[Array[Double]]()
 
+            var arrayCombinacionPredicciones = Array[Array[Double]]()
             var arrayFutures = Array[Future[RDD[Double]]]()
 
             //Función para crear un subset del dataset original y un modelo
