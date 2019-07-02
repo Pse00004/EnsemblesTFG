@@ -157,7 +157,7 @@ object MainStacking {
 
             def subsetModelo(numModelo: Int): Future[Array[RDD[LabeledPoint]]] = Future {
 
-                StackingModelos.Stacking(arrayParticiones, test, numParticionesStacking, modelosLvl0.apply(numModelo),numModelo)
+                StackingModelos.Stacking(arrayParticiones, test, numParticionesStacking, modelosLvl0.apply(numModelo), numModelo)
             }
 
             for (k <- 0 to modelosLvl0.length - 1) {
@@ -178,9 +178,13 @@ object MainStacking {
 
                 result onSuccess {
                     case result => {
-                        println("Obteniendo resultado de modelo " + k)
-                        arrayResultadosNivel0 :+= result
-                        numModelosFinalizados = numModelosFinalizados + 1
+                        def combinarResultados() = this.synchronized {
+                            println("Obteniendo resultado de modelo " + k)
+                            arrayResultadosNivel0 :+= result
+                            numModelosFinalizados = numModelosFinalizados + 1
+                        }
+
+                        combinarResultados()
                     }
                 }
             }

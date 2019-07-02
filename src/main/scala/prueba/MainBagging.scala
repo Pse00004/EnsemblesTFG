@@ -169,10 +169,13 @@ object MainBagging {
                 } yield (r1)
 
                 result onSuccess {
-                    case result => {
-                        println("Obteniendo resultado de modelo " + k)
-                        arrayCombinacionPredicciones :+= result.take(test.count().toInt)
-                        numModelosFinalizados = numModelosFinalizados + 1
+                    case result  => {
+                        def combinarPredicciones() = this.synchronized {
+                            println("Obteniendo resultado de modelo " + k)
+                            arrayCombinacionPredicciones :+= result.take(test.count().toInt)
+                            numModelosFinalizados = numModelosFinalizados + 1
+                        }
+                        combinarPredicciones()
                     }
                 }
             }
