@@ -185,6 +185,8 @@ object MainBagging {
                 Thread.sleep(100)
             }
 
+            println("Combinando predicciones y calculando precisión")
+
             val numAtributos = DS.getnOutput
 
             var arrayAtributos = Array[Double]()
