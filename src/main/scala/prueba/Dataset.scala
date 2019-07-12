@@ -46,6 +46,8 @@ class DataSet extends Serializable {
         loadAttributes(linesHead)
         loadInstances(linesInstances)
 
+        normalize()
+
         //println("Inputs: " + nInput + " Outputs: " + nOutput + " Total attributes: " + nAttributes)
     }
 
@@ -164,6 +166,27 @@ class DataSet extends Serializable {
         }
 
         return doubleValue
+    }
+
+    def normalize () {
+
+        instances = instances.map { instance =>
+            val auxVectorInput = new Array[Double](nInput);
+            val auxVectorOutput = new Array[Double](nOutput);
+            instance._1.toArray.zipWithIndex.map{ x => if (attributes(x._2).kind == 'r') auxVectorInput(x._2) = (x._1-attributes(x._2).rangeMin)/(attributes(x._2).rangeMax-attributes(x._2).rangeMin)
+            else   auxVectorInput(x._2) = x._1}
+
+            /* foreach { x => i = i + 1;
+             if (auxAttributes(i).kind == 'r') auxVectorInput(i) = (x-auxAttributes(i).rangeMin)/(auxAttributes(i).rangeMax-auxAttributes(i).rangeMin)
+             else   auxVectorInput(i) = x
+           }*/
+            //i= - 1
+
+            instance._2.toArray.zipWithIndex.map{ x => if (attributes(x._2+nInput).kind == 'r') auxVectorOutput(x._2) = (x._1-attributes(x._2+nInput).rangeMin)/(attributes(x._2+nInput).rangeMax-attributes(x._2+nInput).rangeMin)
+            else   auxVectorOutput(x._2) = x._1}
+            ((auxVectorInput).toVector, (auxVectorOutput).toVector)
+        }
+        //instances.saveAsTextFile("salidaCN")
     }
 }
 
