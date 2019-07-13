@@ -17,7 +17,7 @@ object MainBagging {
 
         val tiempoInicioPrograma = System.nanoTime
 
-        val conf = new SparkConf().setAppName("ProyectoTFG").setMaster("local")
+        val conf = new SparkConf().setAppName("ProyectoTFG")
         val sc = new SparkContext(conf)
         sc.setLogLevel("ERROR")
 
@@ -132,7 +132,7 @@ object MainBagging {
                 var subsetTraining = training.sample(true, 0.66d)
 
                 //Realizar muestreo
-                val probabilidadPasarAtributo = 0.75
+                val probabilidadPasarAtributo = 0.85
                 val r = scala.util.Random
                 var arrayAtributosPasar = Array[Boolean]()
 
