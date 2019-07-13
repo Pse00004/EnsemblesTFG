@@ -156,7 +156,7 @@ object MainStacking {
 
             def subsetModelo(numModelo: Int): Future[Array[RDD[LabeledPoint]]] = Future {
 
-                StackingModelos.Stacking(arrayParticiones, test, numParticionesStacking, modelosLvl0.apply(numModelo), numModelo)
+                StackingModelos.Stacking(arrayParticiones, test, numParticionesStacking, modelosLvl0.apply(numModelo), numModelo, DS.getnAttributes)
             }
 
             for (k <- 0 to modelosLvl0.length - 1) {

@@ -7,7 +7,7 @@ import org.apache.spark.mllib.regression.LabeledPoint
 
 object StackingModelos {
 
-    def Stacking(particiones: Array[RDD[LabeledPoint]], test: RDD[LabeledPoint], numParticiones: Int, args: Array[String], numModelo: Int): Array[RDD[LabeledPoint]] = {
+    def Stacking(particiones: Array[RDD[LabeledPoint]], test: RDD[LabeledPoint], numParticiones: Int, args: Array[String], numModelo: Int, numAtributosDataset: Int): Array[RDD[LabeledPoint]] = {
 
         var RDDcombinado = Array[RDD[LabeledPoint]]()
 
@@ -31,16 +31,32 @@ object StackingModelos {
                 combinacionGruposParticiones = combinacionGruposParticiones.union(arrayGruposParticiones.apply(k))
             }
 
+            //Realizar muestreo
+            val probabilidadPasarAtributo = 0.75
+            val r = scala.util.Random
+            var arrayAtributosPasar = Array[Boolean]()
+
+            for (indiceAtributo <- 0 to numAtributosDataset - 1) {
+
+                val numeroAleatorio = r.nextFloat()
+
+                if (probabilidadPasarAtributo > numeroAleatorio) {
+                    arrayAtributosPasar :+= true
+                } else {
+                    arrayAtributosPasar :+= false
+                }
+            }
+
             combinacionGruposParticiones = combinacionGruposParticiones.map { x =>
 
                 var arrayValores = Array[Double]()
 
-                for (a <- 0 to x.features.size - 1) {
+                for (indiceAtributo <- 0 to x.features.size - 1) {
 
-                    if ((a + numModelo) % 3 == 0) {
-                        arrayValores :+= 0d
+                    if (arrayAtributosPasar.apply(indiceAtributo) == true) {
+                        arrayValores :+= x.features.apply(indiceAtributo)
                     } else {
-                        arrayValores :+= x.features.apply(a)
+                        arrayValores :+= 0d
                     }
                 }
                 LabeledPoint(x.label, Vectors.dense(arrayValores))

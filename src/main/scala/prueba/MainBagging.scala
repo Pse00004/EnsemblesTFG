@@ -17,7 +17,7 @@ object MainBagging {
 
         val tiempoInicioPrograma = System.nanoTime
 
-        val conf = new SparkConf().setAppName("ProyectoTFG")
+        val conf = new SparkConf().setAppName("ProyectoTFG").setMaster("local")
         val sc = new SparkContext(conf)
         sc.setLogLevel("ERROR")
 
@@ -131,17 +131,32 @@ object MainBagging {
 
                 var subsetTraining = training.sample(true, 0.66d)
 
+                //Realizar muestreo
+                val probabilidadPasarAtributo = 0.75
+                val r = scala.util.Random
+                var arrayAtributosPasar = Array[Boolean]()
+
+                for (indiceAtributo <- 0 to DS.getnAttributes - 1) {
+
+                    val numeroAleatorio = r.nextFloat()
+
+                    if (probabilidadPasarAtributo > numeroAleatorio) {
+                        arrayAtributosPasar :+= true
+                    } else {
+                        arrayAtributosPasar :+= false
+                    }
+                }
 
                 subsetTraining = subsetTraining.map { x =>
 
                     var arrayValores = Array[Double]()
 
-                    for (a <- 0 to x.features.size - 1) {
+                    for (indiceAtributo <- 0 to x.features.size - 1) {
 
-                        if ((a + numModelo) % 4 == 0) {
-                            arrayValores :+= 0d
+                        if (arrayAtributosPasar.apply(indiceAtributo) == true) {
+                            arrayValores :+= x.features.apply(indiceAtributo)
                         } else {
-                            arrayValores :+= x.features.apply(a)
+                            arrayValores :+= 0d
                         }
                     }
                     LabeledPoint(x.label, Vectors.dense(arrayValores))
