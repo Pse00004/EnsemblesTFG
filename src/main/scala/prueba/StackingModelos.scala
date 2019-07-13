@@ -1,5 +1,6 @@
 package prueba
 
+import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.rdd.RDD
 import org.apache.spark.mllib.regression.LabeledPoint
 
@@ -28,6 +29,21 @@ object StackingModelos {
             var combinacionGruposParticiones = arrayGruposParticiones.apply(0)
             for (k <- 1 to numParticiones - 2) {
                 combinacionGruposParticiones = combinacionGruposParticiones.union(arrayGruposParticiones.apply(k))
+            }
+
+            combinacionGruposParticiones = combinacionGruposParticiones.map { x =>
+
+                var arrayValores = Array[Double]()
+
+                for (a <- 0 to x.features.size - 1) {
+
+                    if ((a + numModelo) % 3 == 0) {
+                        arrayValores :+= 0d
+                    } else {
+                        arrayValores :+= x.features.apply(a)
+                    }
+                }
+                LabeledPoint(x.label, Vectors.dense(arrayValores))
             }
 
             //println("Numero instancias: " + combinacionParticiones.count())

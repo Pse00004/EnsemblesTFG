@@ -129,7 +129,24 @@ object MainBagging {
 
                 println("Creando modelo " + numModelo)
 
-                val subsetTraining = training.sample(true, 0.2d)
+                var subsetTraining = training.sample(true, 0.66d)
+
+
+                subsetTraining = subsetTraining.map { x =>
+
+                    var arrayValores = Array[Double]()
+
+                    for (a <- 0 to x.features.size - 1) {
+
+                        if ((a + numModelo) % 4 == 0) {
+                            arrayValores :+= 0d
+                        } else {
+                            arrayValores :+= x.features.apply(a)
+                        }
+                    }
+                    LabeledPoint(x.label, Vectors.dense(arrayValores))
+                }
+
 
                 var predicciones: RDD[Double] = null
 
@@ -169,12 +186,13 @@ object MainBagging {
                 } yield (r1)
 
                 result onSuccess {
-                    case result  => {
+                    case result => {
                         def combinarPredicciones() = this.synchronized {
                             println("Obteniendo resultado de modelo " + k)
                             arrayCombinacionPredicciones :+= result.take(test.count().toInt)
                             numModelosFinalizados = numModelosFinalizados + 1
                         }
+
                         combinarPredicciones()
                     }
                 }

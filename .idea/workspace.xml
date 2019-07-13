@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84548af3-0cc9-4aeb-b031-c56c7ed1dc7b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala" afterDir="false" />
-    </list>
+    <list default="true" id="84548af3-0cc9-4aeb-b031-c56c7ed1dc7b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -69,10 +67,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="175" column="77" selection-start-line="175" selection-start-column="77" selection-end-line="175" selection-end-column="77" />
+            <state relative-caret-position="825">
+              <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
               <folding>
                 <element signature="e#16#50#0" expanded="true" />
               </folding>
@@ -81,13 +79,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="181" selection-start-line="181" selection-end-line="181" selection-end-column="74" />
+            <state relative-caret-position="562">
+              <caret line="191" column="52" selection-start-line="191" selection-end-line="192" />
               <folding>
                 <element signature="e#16#50#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Dataset.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="21" column="35" lean-forward="true" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+              <folding>
+                <element signature="e#16#52#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Attribute.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -95,8 +114,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
-              <caret line="103" column="9" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
+            <state relative-caret-position="465">
+              <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+              <folding>
+                <element signature="e#16#60#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,6 +146,8 @@
       <find>sc.</find>
       <find>sali</find>
       <find>numpa</find>
+      <find>0.2</find>
+      <find>unio</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,7 +163,6 @@
         <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloLR.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloSVM.scala" />
         <option value="$PROJECT_DIR$/build.sbt" />
-        <option value="$PROJECT_DIR$/src/main/scala/prueba/Dataset.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloSuelto.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloNaiveBayes.scala" />
@@ -147,9 +170,10 @@
         <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloSueltoLR.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloDT.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/ModeloSueltoDT.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/prueba/Dataset.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala" />
       </list>
     </option>
   </component>
@@ -248,11 +272,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainBagging">
+  <component name="RunManager" selected="Application.MainStacking">
     <configuration name="MainBagging" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="prueba.MainBagging" />
       <module name="Proyecto" />
-      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../Datasets/magic-5-fold/magic-5-1tra.dat C:/SalidaBagging.txt 1 -l0 LR 2 -l0 LR 2 -l0 LR 2 -l0 LR 2 -l0 LR 2 -l0 LR 2 -l0 LR 2 -l0 LR 2 -l0 LR 2 -l0 LR 2" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../Datasets/magic-5-fold/magic-5-1tra.dat C:/SalidaBagging.txt 1 -l0 NB 1.0 -l0 NB 1.0 -l0 NB 1.0 -l0 NB 1.0 -l0 NB 1.0" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="prueba.*" />
@@ -266,7 +290,7 @@
     <configuration name="MainStacking" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="prueba.MainStacking" />
       <module name="Proyecto" />
-      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../Datasets/magic-5-fold/magic-5-1tra.dat C:/SalidaStacking.txt 1 -l0 DT 2 5 32 -l0 DT 2 5 32 -l1 DT 2 5 32" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../Datasets/magic-5-fold/magic-5-1tra.dat C:/SalidaStacking.txt 1 -l0 NB 1.0 -l0 NB 1.0 -l0 NB 1.0 -l0 NB 1.0 -l0 NB 1.0 -l0 NB 1.0 -l0 NB 1.0 -l0 NB 1.0 -l1 NB 1.0" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="prueba.*" />
@@ -374,8 +398,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainBagging" />
         <item itemvalue="Application.MainStacking" />
+        <item itemvalue="Application.MainBagging" />
       </list>
     </recent_temporary>
   </component>
@@ -502,13 +526,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/package.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/BaggingObjeto.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Prueba.scala" />
-    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Attribute.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -582,37 +599,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Attribute.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/Dataset.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1192">
-          <caret line="93" column="10" selection-start-line="93" selection-start-column="10" selection-end-line="93" selection-end-column="10" />
+        <state relative-caret-position="225">
+          <caret line="21" column="35" lean-forward="true" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
           <folding>
             <element signature="e#16#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="103" column="9" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="181" selection-start-line="181" selection-end-line="181" selection-end-column="74" />
+        <state relative-caret-position="562">
+          <caret line="191" column="52" selection-start-line="191" selection-end-line="192" />
           <folding>
             <element signature="e#16#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainBagging.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/StackingModelos.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
-          <caret line="175" column="77" selection-start-line="175" selection-start-column="77" selection-end-line="175" selection-end-column="77" />
+          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding>
+            <element signature="e#16#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/prueba/MainStacking.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
           <folding>
             <element signature="e#16#50#0" expanded="true" />
           </folding>
