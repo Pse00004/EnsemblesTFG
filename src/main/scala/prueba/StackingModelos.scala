@@ -1,6 +1,5 @@
 package prueba
 
-import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.rdd.RDD
 import org.apache.spark.mllib.regression.LabeledPoint
 
@@ -30,39 +29,6 @@ object StackingModelos {
             for (k <- 1 to numParticiones - 2) {
                 combinacionGruposParticiones = combinacionGruposParticiones.union(arrayGruposParticiones.apply(k))
             }
-
-            //Realizar muestreo
-            val probabilidadPasarAtributo = 0.75
-            val r = scala.util.Random
-            var arrayAtributosPasar = Array[Boolean]()
-
-            for (indiceAtributo <- 0 to numAtributosDataset - 1) {
-
-                val numeroAleatorio = r.nextFloat()
-
-                if (probabilidadPasarAtributo > numeroAleatorio) {
-                    arrayAtributosPasar :+= true
-                } else {
-                    arrayAtributosPasar :+= false
-                }
-            }
-
-            combinacionGruposParticiones = combinacionGruposParticiones.map { x =>
-
-                var arrayValores = Array[Double]()
-
-                for (indiceAtributo <- 0 to x.features.size - 1) {
-
-                    if (arrayAtributosPasar.apply(indiceAtributo) == true) {
-                        arrayValores :+= x.features.apply(indiceAtributo)
-                    } else {
-                        arrayValores :+= 0d
-                    }
-                }
-                LabeledPoint(x.label, Vectors.dense(arrayValores))
-            }
-
-            //println("Numero instancias: " + combinacionParticiones.count())
 
             args.apply(0) match {
                 case "NB" => {
